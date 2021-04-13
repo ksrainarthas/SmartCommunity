@@ -36,7 +36,7 @@
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_online_property"
                     style="@style/main_text_first"
-                    android:text="@string/health_manage"
+                    android:text="@string/online_property"
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
