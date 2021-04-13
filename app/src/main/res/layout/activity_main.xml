@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
@@ -23,61 +24,67 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:orientation="horizontal">
 
-                <TextView
+                <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_announcement"
-                    style="@style/main_text"
-                    android:drawableTop="@mipmap/ic_launcher"
-                    android:text="@string/announcement"/>
-                <TextView
+                    style="@style/main_text_first"
+                    android:text="@string/announcement"
+                    app:topDrawable="@mipmap/ic_launcher" />
+
+                <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_online_property"
-                    style="@style/main_text"
-                    android:drawableTop="@mipmap/ic_launcher"
-                    android:text="@string/health_manage"/>
-                <TextView
+                    style="@style/main_text_first"
+                    android:text="@string/health_manage"
+                    app:topDrawable="@mipmap/ic_launcher" />
+
+                <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_commodity_order"
-                    style="@style/main_text"
-                    android:drawableTop="@mipmap/ic_launcher"
-                    android:text="@string/commodity_order"/>
-                <TextView
+                    style="@style/main_text_first"
+                    android:text="@string/commodity_order"
+                    app:topDrawable="@mipmap/ic_launcher" />
+
+                <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_service_order"
-                    style="@style/main_text"
-                    android:drawableTop="@mipmap/ic_launcher"
-                    android:text="@string/service_order"/>
+                    style="@style/main_text_first"
+                    android:text="@string/service_order"
+                    app:topDrawable="@mipmap/ic_launcher" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:orientation="horizontal">
-                <TextView
+
+                <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_building_intercom"
-                    style="@style/main_text"
-                    android:drawableTop="@mipmap/ic_launcher"
-                    android:text="@string/building_intercom"/>
-                <TextView
+                    style="@style/main_text_second"
+                    android:text="@string/building_intercom"
+                    app:leftDrawable="@mipmap/ic_launcher" />
+
+                <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_elevator_call"
-                    style="@style/main_text"
-                    android:drawableTop="@mipmap/ic_launcher"
-                    android:text="@string/elevator_call"/>
+                    style="@style/main_text_second"
+                    android:text="@string/elevator_call"
+                    app:leftDrawable="@mipmap/ic_launcher" />
             </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
+        <com.lee.smartcommunity.ui.view.DrawableTextView
             android:id="@+id/tv_health_manage"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableTop="@mipmap/ic_launcher"
             android:gravity="bottom|center_horizontal"
-            android:paddingTop="80dp"
-            android:paddingBottom="50dp"
-            android:text="@string/health_manage"/>
+            android:text="@string/health_manage"
+            android:drawablePadding="20dp"
+            app:topDrawable="@mipmap/ic_launcher"
+            app:topDrawableWidth="50dp"
+            app:topDrawableHeight="50dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -90,29 +97,29 @@
         android:orientation="horizontal">
 
         <TextView
-            style="@style/main_text"
+            style="@style/main_text_bottom"
             android:text="@string/litdu_call_property"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
         <TextView
-            style="@style/main_text"
+            style="@style/main_text_bottom"
             android:text="@string/litdu_call_elevator"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
         <TextView
-            style="@style/main_text"
+            style="@style/main_text_bottom"
             android:text="@string/litdu_call_commodity"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
         <TextView
-            style="@style/main_text"
+            style="@style/main_text_bottom"
             android:text="@string/litdu_call_pay"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
 
         <TextView
-            style="@style/main_text"
+            style="@style/main_text_bottom"
             android:text="@string/litdu_call_announcement"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
     </LinearLayout>
 
     <TextView

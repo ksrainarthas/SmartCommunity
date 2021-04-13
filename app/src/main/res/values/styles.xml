@@ -8,7 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="main_text">
+    <style name="main_text_first">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="topDrawableHeight">50dp</item>
+        <item name="topDrawableWidth">50dp</item>
+        <item name="android:drawablePadding">20dp</item>
+    </style>
+    <style name="main_text_second">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="leftDrawableHeight">50dp</item>
+        <item name="leftDrawableWidth">50dp</item>
+        <item name="android:drawablePadding">20dp</item>
+    </style>
+    <style name="main_text_bottom">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
