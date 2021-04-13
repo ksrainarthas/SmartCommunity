@@ -54,4 +54,6 @@ dependencies {
     implementation 'com.github.shichuanenhui:baseadapter:2.0.0'
     implementation 'com.github.shichuanenhui:retrofit:2.0.0'
     implementation 'com.github.shichuanenhui:utils:2.2.0'
+
+    implementation 'com.hjq:xxpermissions:10.6'
 }
