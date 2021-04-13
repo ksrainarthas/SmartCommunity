@@ -7,6 +7,10 @@
     <string name="service_order">服务下单</string>
     <string name="building_intercom">楼宇对讲</string>
     <string name="elevator_call">电梯呼叫</string>
+    <string name="call_property">呼叫物业</string>
+    <string name="online_repair">在线报修</string>
+    <string name="property_payment">物业缴费</string>
+    <string name="guest_invitation">访客邀请</string>
     <string name="litdu_call_property">小度小度，呼叫物业</string>
     <string name="litdu_call_elevator">小度小度，呼叫电梯</string>
     <string name="litdu_call_commodity">小度小度，商品订购</string>

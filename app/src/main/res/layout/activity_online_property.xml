@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/ll_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@id/tv_back"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:orientation="horizontal">
+
+        <com.lee.smartcommunity.ui.view.DrawableTextView
+            android:id="@+id/tv_call_property"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rel"
+            android:drawablePadding="20dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/call_property"
+            app:topDrawable="@mipmap/ic_launcher"
+            app:topDrawableHeight="50dp"
+            app:topDrawableWidth="50dp" />
+
+        <com.lee.smartcommunity.ui.view.DrawableTextView
+            android:id="@+id/tv_online_repair"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rel"
+            android:drawablePadding="20dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/online_repair"
+            app:topDrawable="@mipmap/ic_launcher"
+            app:topDrawableHeight="50dp"
+            app:topDrawableWidth="50dp" />
+
+        <com.lee.smartcommunity.ui.view.DrawableTextView
+            android:id="@+id/tv_property_payment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rel"
+            android:drawablePadding="20dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/property_payment"
+            app:topDrawable="@mipmap/ic_launcher"
+            app:topDrawableHeight="50dp"
+            app:topDrawableWidth="50dp" />
+
+        <com.lee.smartcommunity.ui.view.DrawableTextView
+            android:id="@+id/tv_guest_invitation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rel"
+            android:drawablePadding="20dp"
+            android:gravity="bottom|center_horizontal"
+            android:text="@string/guest_invitation"
+            app:topDrawable="@mipmap/ic_launcher"
+            app:topDrawableHeight="50dp"
+            app:topDrawableWidth="50dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="120dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/main_text_bottom"
+            android:background="@drawable/bg_rel"
+            android:text="@string/litdu_call_property"
+            android:textSize="10sp" />
+
+        <TextView
+            style="@style/main_text_bottom"
+            android:background="@drawable/bg_rel"
+            android:text="@string/litdu_call_elevator"
+            android:textSize="10sp" />
+
+        <TextView
+            style="@style/main_text_bottom"
+            android:background="@drawable/bg_rel"
+            android:text="@string/litdu_call_commodity"
+            android:textSize="10sp" />
+
+        <TextView
+            style="@style/main_text_bottom"
+            android:background="@drawable/bg_rel"
+            android:text="@string/litdu_call_pay"
+            android:textSize="10sp" />
+
+        <TextView
+            style="@style/main_text_bottom"
+            android:background="@drawable/bg_rel"
+            android:text="@string/litdu_call_announcement"
+            android:textSize="10sp" />
+    </LinearLayout>
+</RelativeLayout>

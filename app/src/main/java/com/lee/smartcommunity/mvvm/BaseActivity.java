@@ -5,11 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
+
+import com.gyf.immersionbar.ImmersionBar;
+import com.lee.smartcommunity.databinding.ActivityBaseBinding;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -22,9 +27,13 @@ import java.lang.reflect.Type;
  */
 public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewModel> extends AppCompatActivity {
 
+    protected ActivityBaseBinding baseBinding;
+
     protected Activity mActivity;
 
     protected Context mContext;
+
+    protected Toolbar toolbar;
 
     protected VB viewBinding;
 
@@ -45,7 +54,11 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
      * 设置Activity的主题, 同时注册主题更换监听
      */
     protected void initTheme() {
-
+        ImmersionBar.with(this)
+                .fitsSystemWindowsInt(true, 0xffffffff)
+                .statusBarDarkFont(true)
+                .navigationBarColorInt(0xffffffff)
+                .init();
     }
 
     /**
@@ -54,15 +67,33 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
      * 使用ViewBinding自动绑定布局, 替代ButterKnife
      */
     protected void initContentView() {
-        initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
-        if (viewBinding != null) {
-            setContentView(viewBinding.getRoot());
+        if (isContainToolBar()) {
+            baseBinding = ActivityBaseBinding.inflate(getLayoutInflater());
+            View view = getLayoutInflater().inflate(getLayoutId(), null);
+            baseBinding.container.addView(view);
+            setContentView(baseBinding.getRoot());
+            initViewBinding("bind", View.class, view);
+            initToolBar(baseBinding.toolbar);
         } else {
             initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
             if (viewBinding != null) {
                 setContentView(viewBinding.getRoot());
+            } else {
+                initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
+                if (viewBinding != null) {
+                    setContentView(viewBinding.getRoot());
+                }
             }
         }
+    }
+
+    /**
+     * 设置是否包含默认toolBar
+     *
+     * @return 重写 返回true包含toolBar
+     */
+    protected boolean isContainToolBar() {
+        return true;
     }
 
     /**
@@ -84,6 +115,28 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * 初始化toolBar
+     */
+    protected void initToolBar(Toolbar toolbar) {
+        this.toolbar = toolbar;
+        //try {
+        //    toolbar.setTitle(setTitle());
+        //    setSupportActionBar(toolbar);
+        //    ActionBar supportActionBar = getSupportActionBar();
+        //    if (supportActionBar != null) {
+        //        supportActionBar.setDisplayHomeAsUpEnabled(true);
+        //        toolbar.setNavigationOnClickListener(v -> finish());
+        //    }
+        //} catch (Exception e) {
+        //    e.printStackTrace();
+        //}
+    }
+
+    protected Toolbar getToolbar() {
+        return toolbar;
     }
 
     /**
@@ -138,6 +191,15 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     }
 
     /**
+     * 设置标题
+     *
+     * @return 要显示的标题名称
+     */
+    protected String setTitle() {
+        return "";
+    }
+
+    /**
      * 初始化ViewModel
      *
      * @return 重写此方法创建带factory的viewModel
@@ -145,6 +207,13 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     protected VM getViewModel() {
         return null;
     }
+
+    /**
+     * 获取要显示内容的布局文件的资源id
+     *
+     * @return 显示的内容界面的资源id
+     */
+    protected abstract int getLayoutId();
 
     /**
      * 子类可以调用这个方法进行初始化

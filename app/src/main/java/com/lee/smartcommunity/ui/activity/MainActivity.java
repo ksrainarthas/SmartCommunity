@@ -1,5 +1,6 @@
 package com.lee.smartcommunity.ui.activity;
 
+import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.app.AppManager;
 import com.lee.smartcommunity.databinding.ActivityMainBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
@@ -9,6 +10,11 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * @author Lee
  */
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
     @Override
     protected void initView() {
