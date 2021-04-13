@@ -12,7 +12,31 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 
     @Override
     protected void initView() {
+        initViewClick();
+    }
 
+    private void initViewClick() {
+        viewBinding.tvAnnouncement.setOnClickListener(v -> {
+            startActivity(AnnouncementActivity.class);
+        });
+        viewBinding.tvOnlineProperty.setOnClickListener(v -> {
+            startActivity(OnlinePropertyActivity.class);
+        });
+        viewBinding.tvCommodityOrder.setOnClickListener(v -> {
+            startActivity(CommodityOrderActivity.class);
+        });
+        viewBinding.tvServiceOrder.setOnClickListener(v -> {
+            startActivity(ServiceOrderActivity.class);
+        });
+        viewBinding.tvBuildingIntercom.setOnClickListener(v -> {
+            startActivity(BuildingIntercomActivity.class);
+        });
+        viewBinding.tvElevatorCall.setOnClickListener(v -> {
+            startActivity(ElevatorCallActivity.class);
+        });
+        viewBinding.tvHealthManage.setOnClickListener(v -> {
+            startActivity(HealthManageActivity.class);
+        });
     }
 
     @Override
