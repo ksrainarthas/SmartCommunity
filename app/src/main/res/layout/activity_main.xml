@@ -1,16 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/ll_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom"
+        android:layout_below="@id/tv_back"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_announcement"
+                    style="@style/main_text"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:text="@string/announcement"/>
+                <TextView
+                    android:id="@+id/tv_online_property"
+                    style="@style/main_text"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:text="@string/health_manage"/>
+                <TextView
+                    android:id="@+id/tv_commodity_order"
+                    style="@style/main_text"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:text="@string/commodity_order"/>
+                <TextView
+                    android:id="@+id/tv_service_order"
+                    style="@style/main_text"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:text="@string/service_order"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_building_intercom"
+                    style="@style/main_text"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:text="@string/building_intercom"/>
+                <TextView
+                    android:id="@+id/tv_elevator_call"
+                    style="@style/main_text"
+                    android:drawableTop="@mipmap/ic_launcher"
+                    android:text="@string/elevator_call"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_health_manage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="bottom|center_horizontal"
+            android:paddingTop="80dp"
+            android:paddingBottom="50dp"
+            android:text="@string/health_manage"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:orientation="horizontal">
+
+    </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_addr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:layout_toStartOf="@id/tv_time"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/back"
+        android:textColor="@android:color/black" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/back"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/back"
+        android:textColor="@android:color/black" />
+</RelativeLayout>

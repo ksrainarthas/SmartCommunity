@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">智慧社区</string>
+    <string name="health_manage">健康管理</string>
+    <string name="announcement">通知公告</string>
+    <string name="online_property">线上物业</string>
+    <string name="commodity_order">商品订购</string>
+    <string name="service_order">服务下单</string>
+    <string name="building_intercom">楼宇对讲</string>
+    <string name="elevator_call">电梯呼叫</string>
+    <string name="back">返回</string>
 </resources>
