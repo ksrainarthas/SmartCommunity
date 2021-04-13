@@ -16,5 +16,11 @@
         <attr name="rightDrawableHeight" format="reference|dimension"/>
         <attr name="topDrawableHeight" format="reference|dimension"/>
         <attr name="bottomDrawableHeight" format="reference|dimension"/>
+
+        <attr name="redTipsVisibility">
+            <enum name="invisible" value="0" />
+            <enum name="visible" value="1" />
+            <enum name="gone" value="2" />
+        </attr>
     </declare-styleable>
 </resources>

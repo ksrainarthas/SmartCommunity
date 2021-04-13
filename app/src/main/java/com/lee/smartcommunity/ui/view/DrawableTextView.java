@@ -3,6 +3,7 @@ package com.lee.smartcommunity.ui.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -18,12 +19,18 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * @author deadline
- *         <p>
- *         解决drawable不与文字居中的问题
- *         https://github.com/niniloveyou/DrawableTextView
+ * <p>
+ * 解决drawable不与文字居中的问题
+ * https://github.com/niniloveyou/DrawableTextView
  */
 
 public class DrawableTextView extends AppCompatTextView {
+
+    /**
+     * 红点标识
+     */
+    private int mTipVisibility = 0;
+    private Paint mPaint = null;
 
     private Drawable[] drawables;
     private int[] widths;
@@ -74,6 +81,13 @@ public class DrawableTextView extends AppCompatTextView {
         heights[1] = array.getDimensionPixelSize(R.styleable.DrawableTextView_topDrawableHeight, 0);
         heights[2] = array.getDimensionPixelSize(R.styleable.DrawableTextView_rightDrawableHeight, 0);
         heights[3] = array.getDimensionPixelSize(R.styleable.DrawableTextView_bottomDrawableHeight, 0);
+
+        mTipVisibility = array.getInt(R.styleable.DrawableTextView_redTipsVisibility, 0);
+        mPaint = new Paint();
+        mPaint.setColor(Color.RED);
+        mPaint.setAntiAlias(true);
+        mPaint.setDither(true);
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
         array.recycle();
     }
@@ -162,6 +176,11 @@ public class DrawableTextView extends AppCompatTextView {
             drawables[3].draw(canvas);
             canvas.restore();
         }
+
+        // 如果标识是显示，则设置红点位置及大小并显示
+        if (mTipVisibility == 1) {
+            canvas.drawCircle(getWidth()-10, -60, 10, mPaint);
+        }
     }
 
     private void translateText(Canvas canvas, int drawablePadding) {
@@ -187,4 +206,11 @@ public class DrawableTextView extends AppCompatTextView {
         canvas.translate(translateWidth, translateHeight);
     }
 
+    /**
+     * 设置红点显隐
+     */
+    public void setTipVisibility(int visibility) {
+        mTipVisibility = visibility;
+        invalidate();
+    }
 }

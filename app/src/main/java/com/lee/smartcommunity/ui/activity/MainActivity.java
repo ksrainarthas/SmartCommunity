@@ -22,6 +22,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     }
 
     private void initViewClick() {
+        viewBinding.tvAnnouncement.setTipVisibility(1);
         viewBinding.tvAnnouncement.setOnClickListener(v -> {
             startActivity(AnnouncementActivity.class);
         });
