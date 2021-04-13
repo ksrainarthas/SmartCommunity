@@ -17,4 +17,9 @@
     <string name="litdu_call_pay">小度小度，在线缴费</string>
     <string name="litdu_call_announcement">小度小度，通知公告</string>
     <string name="back">返回</string>
+    <string name="elevator_floor_tip">电梯目前处于%d层，请尽快至电梯口乘坐哦</string>
+    <string name="south_door">南门</string>
+    <string name="north_door">北门</string>
+    <string name="east_door">东门</string>
+    <string name="west_door">西门</string>
 </resources>
