@@ -86,9 +86,33 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginRight="120dp"
         android:orientation="horizontal">
 
+        <TextView
+            style="@style/main_text"
+            android:text="@string/litdu_call_property"
+            android:textSize="10sp"/>
+
+        <TextView
+            style="@style/main_text"
+            android:text="@string/litdu_call_elevator"
+            android:textSize="10sp"/>
+
+        <TextView
+            style="@style/main_text"
+            android:text="@string/litdu_call_commodity"
+            android:textSize="10sp"/>
+
+        <TextView
+            style="@style/main_text"
+            android:text="@string/litdu_call_pay"
+            android:textSize="10sp"/>
+
+        <TextView
+            style="@style/main_text"
+            android:text="@string/litdu_call_announcement"
+            android:textSize="10sp"/>
     </LinearLayout>
 
     <TextView
