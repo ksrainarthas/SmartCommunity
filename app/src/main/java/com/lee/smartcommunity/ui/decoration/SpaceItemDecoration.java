@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * gridView布局边距
+ * GridView布局边距
  *
  * @author Lee
  */
