@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/back"
+            android:textColor="@android:color/black" />
+
+        <com.lee.tablayout.SlidingTabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/tab_height"
+            android:layout_centerHorizontal="true"
+            app:tl_indicator_color="#000000"
+            app:tl_indicator_corner_radius="@dimen/space_width_small"
+            app:tl_indicator_width_equal_title="true"
+            app:tl_tab_padding="@dimen/space_width_large"
+            app:tl_textAllCaps="true"
+            app:tl_textBold="BOTH"
+            app:tl_textSelectColor="#000000"
+            app:tl_textSelectedSize="@dimen/text_size_title"
+            app:tl_textSize="@dimen/text_size_title"
+            app:tl_textUnselectedColor="#CDCDCD" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/back"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+</LinearLayout>

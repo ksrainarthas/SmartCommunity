@@ -53,6 +53,7 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
     implementation 'com.github.shichuanenhui:baseadapter:2.0.0'
+    implementation 'com.github.shichuanenhui:tablayout:2.1.0'
     implementation 'com.github.shichuanenhui:retrofit:2.0.0'
     implementation 'com.github.shichuanenhui:utils:2.2.0'
 
