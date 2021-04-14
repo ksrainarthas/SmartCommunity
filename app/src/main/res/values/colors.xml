@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="guide_line">#bbbbbb</color>
+    <color name="building_intercom_pre">#ae3232</color>
+    <color name="border">#CDCDCD</color>
 </resources>
