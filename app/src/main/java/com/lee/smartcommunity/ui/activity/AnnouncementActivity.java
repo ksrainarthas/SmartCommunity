@@ -1,5 +1,7 @@
 package com.lee.smartcommunity.ui.activity;
 
+import android.view.View;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,5 +41,8 @@ public class AnnouncementActivity extends BaseActivity<com.lee.smartcommunity.da
         }
         AnnouncementAdapter announcementAdapter = new AnnouncementAdapter(this, list);
         viewBinding.rvAnnouncement.setAdapter(announcementAdapter);
+
+        baseBinding.tvTitle.setText(this.getString(R.string.community_reminder));
+        baseBinding.tvAddr.setVisibility(View.GONE);
     }
 }

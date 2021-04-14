@@ -15,10 +15,16 @@ import androidx.viewbinding.ViewBinding;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.lee.smartcommunity.databinding.ActivityBaseBinding;
+import com.lee.utils.ThreadUtils;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Activity 基类
@@ -38,6 +44,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     protected VB viewBinding;
 
     protected VM viewModel;
+    private Timer timer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +81,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
             setContentView(baseBinding.getRoot());
             initViewBinding("bind", View.class, view);
             initToolBar(baseBinding.toolbar);
+            startTimer();
         } else {
             initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
             if (viewBinding != null) {
@@ -85,6 +93,22 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
                 }
             }
         }
+    }
+
+    private void startTimer() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                ThreadUtils.getCpuPool().execute(() -> {
+                    runOnUiThread(() -> {
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+                        Date date = new Date(System.currentTimeMillis());
+                        baseBinding.tvTime.setText(simpleDateFormat.format(date));
+                    });
+                });
+            }
+        }, 0, 1000);
     }
 
     /**
@@ -267,6 +291,9 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+        }
         viewBinding = null;
         viewModel = null;
     }

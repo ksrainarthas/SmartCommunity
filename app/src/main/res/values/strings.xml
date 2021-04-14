@@ -22,4 +22,5 @@
     <string name="north_door">北门</string>
     <string name="east_door">东门</string>
     <string name="west_door">西门</string>
+    <string name="community_reminder">社区温馨提示</string>
 </resources>
