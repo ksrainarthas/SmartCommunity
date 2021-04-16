@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.model.AnnouncementModel;
+import com.lee.utils.ThreadUtils;
 
 import java.util.List;
 
@@ -56,6 +57,12 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
             super(itemView);
             tv_title = itemView.findViewById(R.id.tv_title);
             tv_content = itemView.findViewById(R.id.tv_content);
+            ThreadUtils.runOnUiThreadDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            },1000);
         }
     }
 }

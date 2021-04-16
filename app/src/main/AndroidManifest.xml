@@ -61,6 +61,22 @@
             android:name=".ui.activity.ServiceOrderActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
             android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.GuestInvitationActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.OnlineRepairActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.PropertyPaymentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.CallPropertyActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="sensorLandscape" />
     </application>
 
 </manifest>

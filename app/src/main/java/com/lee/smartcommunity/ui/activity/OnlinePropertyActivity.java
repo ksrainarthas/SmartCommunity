@@ -19,6 +19,17 @@ public class OnlinePropertyActivity extends BaseActivity<ActivityOnlinePropertyB
 
     @Override
     protected void initView() {
-
+        viewBinding.tvCallProperty.setOnClickListener(v -> {
+            startActivity(CallPropertyActivity.class);
+        });
+        viewBinding.tvPropertyPayment.setOnClickListener(v -> {
+            startActivity(PropertyPaymentActivity.class);
+        });
+        viewBinding.tvOnlineRepair.setOnClickListener(v -> {
+            startActivity(OnlineRepairActivity.class);
+        });
+        viewBinding.tvGuestInvitation.setOnClickListener(v -> {
+            startActivity(GuestInvitationActivity.class);
+        });
     }
 }
