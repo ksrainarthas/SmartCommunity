@@ -2,15 +2,18 @@ package com.lee.smartcommunity.ui.activity;
 
 import android.view.View;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lee.retrofit.model.Status;
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.model.AnnouncementModel;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.ui.adapter.AnnouncementAdapter;
 import com.lee.smartcommunity.ui.decoration.HorizontalDividerItemItemDecoration;
 import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,5 +47,15 @@ public class AnnouncementActivity extends BaseActivity<com.lee.smartcommunity.da
 
         baseBinding.tvTitle.setText(this.getString(R.string.community_reminder));
         baseBinding.tvAddr.setVisibility(View.GONE);
+
+        MainViewModel mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        mainViewModel.getAnnouncementResult().observe(this, resource -> {
+            if (resource.status == Status.SUCCESS) {
+                ToastUtils.showShort("网络请求成功" + resource.data.toString());
+            } else if (resource.status == Status.ERROR) {
+                ToastUtils.showShort("网络请求失败");
+            }
+        });
+        mainViewModel.getAnnouncement(1);
     }
 }
