@@ -2,12 +2,12 @@ package com.lee.smartcommunity.ui.activity;
 
 import android.view.View;
 
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.retrofit.model.Status;
 import com.lee.smartcommunity.R;
+import com.lee.smartcommunity.databinding.ActivityAnnouncementBinding;
 import com.lee.smartcommunity.model.AnnouncementModel;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.ui.adapter.AnnouncementAdapter;
@@ -24,7 +24,7 @@ import java.util.List;
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:31
  */
-public class AnnouncementActivity extends BaseActivity<com.lee.smartcommunity.databinding.ActivityAnnouncementBinding, MainViewModel> {
+public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBinding, MainViewModel> {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_announcement;
@@ -48,14 +48,13 @@ public class AnnouncementActivity extends BaseActivity<com.lee.smartcommunity.da
         baseBinding.tvTitle.setText(this.getString(R.string.community_reminder));
         baseBinding.tvAddr.setVisibility(View.GONE);
 
-        MainViewModel mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
-        mainViewModel.getAnnouncementResult().observe(this, resource -> {
+        viewModel.getAnnouncementResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {
                 ToastUtils.showShort("网络请求成功" + resource.data.toString());
             } else if (resource.status == Status.ERROR) {
                 ToastUtils.showShort("网络请求失败");
             }
         });
-        mainViewModel.getAnnouncement(1);
+        viewModel.getAnnouncement(1);
     }
 }
