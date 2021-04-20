@@ -16,5 +16,5 @@ import retrofit2.http.Query;
  */
 public interface AppService {
     @POST(AppUrl.GET_ANNOUNCEMENT)
-    LiveData<AnnouncementResult> getAnnouncement(@Query("c") String c, @Query("g") String g, @Query("a") String a, @Body RequestBody body);
+    LiveData<AnnouncementResult> getAnnouncement(@Query("g") String g, @Query("c") String c, @Query("a") String a, @Body RequestBody body);
 }

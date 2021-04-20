@@ -1,15 +1,18 @@
 package com.lee.smartcommunity.model;
 
+import androidx.annotation.NonNull;
+
+import java.util.List;
+
 /**
  * 文件名: AnnouncementResult
  * 创建者: WangYu
  * 创建日期: 2021/4/16 9:02
  */
 public class AnnouncementResult {
-
     private int error_code;
     private String msg;
-    private DataBean data;
+    private List<DataBean> data;
 
     public int getError_code() {
         return error_code;
@@ -27,11 +30,11 @@ public class AnnouncementResult {
         this.msg = msg;
     }
 
-    public DataBean getData() {
+    public List<DataBean> getData() {
         return data;
     }
 
-    public void setData(DataBean data) {
+    public void setData(List<DataBean> data) {
         this.data = data;
     }
 
@@ -73,6 +76,7 @@ public class AnnouncementResult {
             this.add_time = add_time;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return "DataBean{" +
@@ -84,6 +88,7 @@ public class AnnouncementResult {
         }
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "AnnouncementResult{" +
