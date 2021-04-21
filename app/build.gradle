@@ -58,4 +58,7 @@ dependencies {
     implementation 'com.github.shichuanenhui:utils:2.2.0'
 
     implementation 'com.hjq:xxpermissions:10.6'
+
+    // OKGO
+    implementation 'com.lzy.net:okgo:3.0.4'
 }

@@ -1,6 +1,7 @@
 package com.lee.smartcommunity.ui.adapter;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.smartcommunity.R;
-import com.lee.smartcommunity.model.AnnouncementModel;
-import com.lee.utils.ThreadUtils;
+import com.lee.smartcommunity.model.AnnouncementResult;
 
 import java.util.List;
 
@@ -23,9 +23,9 @@ import java.util.List;
 public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapter.AnnouncementVH> {
 
     private Context context;
-    private List<AnnouncementModel> list;
+    private List<AnnouncementResult.DataBean> list;
 
-    public AnnouncementAdapter(Context context, List<AnnouncementModel> list) {
+    public AnnouncementAdapter(Context context, List<AnnouncementResult.DataBean> list) {
         this.context = context;
         this.list = list;
     }
@@ -39,9 +39,15 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
 
     @Override
     public void onBindViewHolder(@NonNull AnnouncementVH holder, int position) {
-        AnnouncementModel announcementModel = list.get(position);
-        holder.tv_title.setText(announcementModel.getTitle());
-        holder.tv_content.setText(announcementModel.getContent());
+        AnnouncementResult.DataBean dataBean = list.get(position);
+        String title = dataBean.getTitle();
+        holder.tv_title.setText(title);
+        String content = dataBean.getContent();
+        content = content.replace("&lt;", "<");
+        content = content.replace("&gt;", ">");
+        content = content.replace("&quot;", "/");
+        content = content.replace("&amp;nbsp;", " ");
+        holder.tv_content.setText(Html.fromHtml(content));
     }
 
     @Override
@@ -57,12 +63,6 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
             super(itemView);
             tv_title = itemView.findViewById(R.id.tv_title);
             tv_content = itemView.findViewById(R.id.tv_content);
-            ThreadUtils.runOnUiThreadDelayed(new Runnable() {
-                @Override
-                public void run() {
-
-                }
-            },1000);
         }
     }
 }

@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 
 import com.lee.utils.LogUtils;
 import com.lee.utils.Utils;
+import com.lzy.okgo.OkGo;
 
 /**
  * 程序入口
@@ -25,6 +26,7 @@ public class App extends Application {
         Utils.init(this);
         setApplication(this);
         initLogUtils();
+        OkGo.getInstance().init(this);
     }
 
     private void initLogUtils() {
