@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.model.AnnouncementResult;
+import com.lee.smartcommunity.utils.ImageGetter;
+import com.lee.smartcommunity.utils.MxgsaTagHandler;
 
 import java.util.List;
 
@@ -43,11 +45,12 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
         String title = dataBean.getTitle();
         holder.tv_title.setText(title);
         String content = dataBean.getContent();
+        content = content.replace("&quot;", "\"");
+        content = content.replace("&amp;", "&");
         content = content.replace("&lt;", "<");
         content = content.replace("&gt;", ">");
-        content = content.replace("&quot;", "/");
-        content = content.replace("&amp;nbsp;", " ");
-        holder.tv_content.setText(Html.fromHtml(content));
+        content = content.replace("&nbsp;", " ");
+        holder.tv_content.setText(Html.fromHtml(content, new ImageGetter(context, holder.tv_content), new MxgsaTagHandler(context)));
     }
 
     @Override
