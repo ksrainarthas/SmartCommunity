@@ -58,14 +58,11 @@ public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBindi
 //        });
 //        viewModel.getAnnouncement(1);
 
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder
-                .append("?")
-                .append("g=Api")
-                .append("&c=House")
-                .append("&a=getNews");
-
-        OkGo.<String>post(AppUrl.BASE_URL + AppUrl.GET_ANNOUNCEMENT + stringBuilder.toString()).params("villageId", 1).execute(new StringCallback() {
+        String stringBuilder = "?" +
+                "g=Api" +
+                "&c=House" +
+                "&a=getNews";
+        OkGo.<String>post(AppUrl.BASE_URL + AppUrl.GET_ANNOUNCEMENT + stringBuilder).params("villageId", 1).execute(new StringCallback() {
             @Override
             public void onSuccess(Response<String> response) {
                 putData(response.body());

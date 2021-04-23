@@ -82,6 +82,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
             initViewBinding("bind", View.class, view);
             initToolBar(baseBinding.toolbar);
             startTimer();
+            baseBinding.tvBack.setOnClickListener(v -> finish());
         } else {
             initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
             if (viewBinding != null) {
