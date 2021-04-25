@@ -5,18 +5,15 @@ import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
+import com.lee.retrofit.model.Status;
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.databinding.ActivityAnnouncementBinding;
 import com.lee.smartcommunity.model.AnnouncementResult;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.net.AppUrl;
 import com.lee.smartcommunity.ui.adapter.AnnouncementAdapter;
 import com.lee.smartcommunity.ui.decoration.HorizontalDividerItemItemDecoration;
 import com.lee.smartcommunity.viewmodel.MainViewModel;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
+import com.lee.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,31 +46,21 @@ public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBindi
         baseBinding.tvTitle.setText(this.getString(R.string.community_reminder));
         baseBinding.tvAddr.setVisibility(View.GONE);
 
-//        viewModel.getAnnouncementResult().observe(this, resource -> {
-//            if (resource.status == Status.SUCCESS) {
-//                ToastUtils.showShort("网络请求成功" + resource.data.toString());
-//            } else if (resource.status == Status.ERROR) {
-//                ToastUtils.showShort("网络请求失败");
-//            }
-//        });
-//        viewModel.getAnnouncement(1);
-
-        String stringBuilder = "?" +
-                "g=Api" +
-                "&c=House" +
-                "&a=getNews";
-        OkGo.<String>post(AppUrl.BASE_URL + AppUrl.GET_ANNOUNCEMENT + stringBuilder).params("villageId", 1).execute(new StringCallback() {
-            @Override
-            public void onSuccess(Response<String> response) {
-                putData(response.body());
+        viewModel.getAnnouncementResult().observe(this, resource -> {
+            if (resource.status == Status.SUCCESS) {
+                if (resource.data != null) {
+                    putData(resource.data.getData());
+                }
+            } else if (resource.status == Status.ERROR) {
+                ToastUtils.showShort("网络请求失败");
             }
         });
+        viewModel.getAnnouncement(1);
     }
 
-    private void putData(String json) {
-        AnnouncementResult announcementResult = new Gson().fromJson(json, AnnouncementResult.class);
+    private void putData(List<AnnouncementResult.DataBean> data) {
         list.clear();
-        list.addAll(announcementResult.getData());
+        list.addAll(data);
         announcementAdapter.notifyDataSetChanged();
     }
 }
