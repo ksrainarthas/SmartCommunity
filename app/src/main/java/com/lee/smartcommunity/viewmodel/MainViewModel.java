@@ -4,8 +4,8 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 
+import com.lee.retrofit.livedata.SingleSourceLiveData;
 import com.lee.retrofit.model.Resource;
-import com.lee.smartcommunity.livedata.SingleSourceLiveData;
 import com.lee.smartcommunity.model.AnnouncementResult;
 import com.lee.smartcommunity.mvvm.BaseViewModel;
 import com.lee.smartcommunity.net.AppTask;
