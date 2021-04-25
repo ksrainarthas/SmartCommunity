@@ -1,7 +1,6 @@
 package com.lee.smartcommunity.ui.adapter;
 
 import android.content.Context;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.model.AnnouncementResult;
-import com.lee.smartcommunity.utils.ImageGetter;
-import com.lee.smartcommunity.utils.MxgsaTagHandler;
+import com.tencent.smtt.sdk.WebView;
 
 import java.util.List;
 
@@ -50,7 +48,9 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
         content = content.replace("&lt;", "<");
         content = content.replace("&gt;", ">");
         content = content.replace("&nbsp;", " ");
-        holder.tv_content.setText(Html.fromHtml(content, new ImageGetter(context, holder.tv_content), new MxgsaTagHandler(context)));
+        holder.wv_content.getSettings().setDefaultTextEncodingName("UTF -8");//设置默认为utf-8
+        //holder.wv_content.loadData(htmlData, "text/html", "UTF -8");//API提供的标准用法，无法解决乱码问题
+        holder.wv_content.loadData(content, "text/html; charset=UTF-8", null);//这种写法可以正确解码
     }
 
     @Override
@@ -60,12 +60,12 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
 
     public static class AnnouncementVH extends RecyclerView.ViewHolder {
         private TextView tv_title;
-        private TextView tv_content;
+        private WebView wv_content;
 
         public AnnouncementVH(@NonNull View itemView) {
             super(itemView);
             tv_title = itemView.findViewById(R.id.tv_title);
-            tv_content = itemView.findViewById(R.id.tv_content);
+            wv_content = itemView.findViewById(R.id.wv_content);
         }
     }
 }

@@ -54,6 +54,7 @@ dependencies {
 
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
 
+    implementation 'io.github.shichuanenhui:cordova-static:1.0.0'
     implementation 'io.github.shichuanenhui:baseadapter:1.0.0'
     implementation 'io.github.shichuanenhui:tablayout:1.0.0'
     implementation 'io.github.shichuanenhui:retrofit:1.0.0'
