@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/ll_bottom"
-        android:layout_below="@id/tv_back"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:orientation="horizontal">

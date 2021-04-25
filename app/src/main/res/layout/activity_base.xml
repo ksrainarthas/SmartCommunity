@@ -10,7 +10,11 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@style/ToolbarStyle">
+            style="@style/ToolbarStyle"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -18,54 +22,51 @@
                 android:background="@android:color/white">
 
                 <TextView
-                    android:id="@+id/tv_addr"
+                    android:id="@+id/tv_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_margin="8dp"
-                    android:layout_toStartOf="@id/tv_time"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/ic_back"
                     android:gravity="center"
-                    android:padding="8dp"
-                    android:text="@string/back"
+                    android:padding="5dp"
                     android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_margin="8dp"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="5dp"
                     android:gravity="center"
-                    android:padding="8dp"
-                    android:text="@string/back"
-                    android:textColor="@android:color/black"
-                    android:textSize="25sp" />
+                    android:padding="5dp"
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tv_back"
+                    android:id="@+id/tv_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_margin="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:layout_toStartOf="@id/tv_time"
                     android:gravity="center"
-                    android:padding="8dp"
-                    android:text="@string/back"
-                    android:textColor="@android:color/black" />
+                    android:padding="5dp"
+                    android:text="@string/address"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/tv_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_margin="8dp"
+                    android:layout_margin="5dp"
                     android:gravity="center"
-                    android:padding="8dp"
-                    android:text="@string/back"
+                    android:padding="5dp"
                     android:textColor="@android:color/black"
-                    android:textSize="25sp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
 

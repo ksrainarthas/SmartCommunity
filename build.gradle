@@ -14,27 +14,21 @@ buildscript {
 
 allprojects {
     repositories {
-        maven {
-            credentials {
-                username '5f605b28fa82bfeb803bd47b'
-                password 'v65jpzJytr0D'
-            }
-            url 'https://packages.aliyun.com/maven/repository/2084610-release-cn385Q/'
-        }
+        maven { url "https://jitpack.io" }
         google()
+        jcenter()
         mavenCentral()
+    }
+    project.ext {
+        compileSdkVersion = 30
+        buildToolsVersion = '30.0.3'
+        minSdkVersion = 21
+        targetSdkVersion = 30
+        versionCode = 1
+        versionName = '1.0'
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-project.ext {
-    compileSdkVersion = 30
-    buildToolsVersion = '30.0.3'
-    minSdkVersion = 21
-    targetSdkVersion = 30
-    versionCode = 1
-    versionName = '1.0'
 }

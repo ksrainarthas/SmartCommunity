@@ -54,7 +54,7 @@
 
     <style name="ToolbarStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

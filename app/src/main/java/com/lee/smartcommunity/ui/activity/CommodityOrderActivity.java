@@ -23,7 +23,6 @@ public class CommodityOrderActivity extends BaseActivity<ActivityCommodityOrderB
 
     private String[] titles;
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_commodity_order;

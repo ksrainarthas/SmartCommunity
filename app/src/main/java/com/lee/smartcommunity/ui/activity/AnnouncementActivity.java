@@ -1,7 +1,5 @@
 package com.lee.smartcommunity.ui.activity;
 
-import android.view.View;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +33,11 @@ public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBindi
     }
 
     @Override
+    protected String setTitle() {
+        return getString(R.string.community_reminder);
+    }
+
+    @Override
     protected void initView() {
         list = new ArrayList<>();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
@@ -42,9 +45,6 @@ public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBindi
         viewBinding.rvAnnouncement.addItemDecoration(new HorizontalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(30).build());
         announcementAdapter = new AnnouncementAdapter(this, list);
         viewBinding.rvAnnouncement.setAdapter(announcementAdapter);
-
-        baseBinding.tvTitle.setText(this.getString(R.string.community_reminder));
-        baseBinding.tvAddr.setVisibility(View.GONE);
 
         viewModel.getAnnouncementResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {

@@ -12,9 +12,15 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * 创建日期: 2021/4/13 11:40
  */
 public class ServiceOrderActivity extends BaseActivity<ActivityServiceOrderBinding, MainViewModel> {
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_service_order;
+    }
+
+    @Override
+    protected String setTitle() {
+        return getString(R.string.service_order);
     }
 
     @Override

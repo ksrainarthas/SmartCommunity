@@ -40,7 +40,7 @@ public class AppTask {
                 HashMap<String, Object> body = new HashMap<>();
                 body.put("villageId", villageId);
                 RequestBody requestBody = RetrofitUtils.createJsonRequestBody(body);
-                return appService.getAnnouncement("Api", "House", "getNews", requestBody);
+                return appService.getAnnouncement(requestBody);
             }
 
             @Override

@@ -7,6 +7,8 @@ import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.viewmodel.MainViewModel;
 
 /**
+ * 首页
+ *
  * @author Lee
  */
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
@@ -14,6 +16,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    protected boolean isShowAddress() {
+        return true;
     }
 
     @Override

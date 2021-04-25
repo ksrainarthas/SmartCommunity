@@ -14,5 +14,5 @@ public class AppUrl {
     public static final String BASE_URL = "http://www.ljyjy.ink/";
 
     //获取通知公告
-    public static final String GET_ANNOUNCEMENT = "api.php";
+    public static final String GET_ANNOUNCEMENT = "api.php?g=Api&c=House&a=getNews";
 }

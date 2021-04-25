@@ -12,9 +12,15 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * 创建日期: 2021/4/13 11:50
  */
 public class ElevatorCallActivity extends BaseActivity<ActivityElevatorCallBinding, MainViewModel> {
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_elevator_call;
+    }
+
+    @Override
+    protected String setTitle() {
+        return getString(R.string.elevator_call);
     }
 
     @Override

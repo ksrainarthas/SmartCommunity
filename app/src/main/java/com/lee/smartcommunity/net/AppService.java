@@ -7,7 +7,6 @@ import com.lee.smartcommunity.model.AnnouncementResult;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 /**
  * 网络请求
@@ -16,5 +15,5 @@ import retrofit2.http.Query;
  */
 public interface AppService {
     @POST(AppUrl.GET_ANNOUNCEMENT)
-    LiveData<AnnouncementResult> getAnnouncement(@Query("g") String g, @Query("c") String c, @Query("a") String a, @Body RequestBody body);
+    LiveData<AnnouncementResult> getAnnouncement(@Body RequestBody body);
 }

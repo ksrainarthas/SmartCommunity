@@ -12,9 +12,15 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * 创建日期: 2021/4/13 11:49
  */
 public class BuildingIntercomActivity extends BaseActivity<ActivityBuildingIntercomBinding, MainViewModel> {
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_building_intercom;
+    }
+
+    @Override
+    protected String setTitle() {
+        return getString(R.string.building_intercom);
     }
 
     @Override

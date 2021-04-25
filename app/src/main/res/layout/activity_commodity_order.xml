@@ -15,18 +15,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="8dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
             android:gravity="center"
-            android:padding="8dp"
-            android:text="@string/back"
+            android:padding="5dp"
+            android:background="@drawable/ic_back"
             android:textColor="@android:color/black" />
 
         <com.lee.tablayout.SlidingTabLayout
             android:id="@+id/tabLayout"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/tab_height"
-            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
             app:tl_indicator_color="#000000"
             app:tl_indicator_corner_radius="@dimen/space_width_small"
             app:tl_indicator_width_equal_title="true"
@@ -42,13 +42,12 @@
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_margin="8dp"
+            android:layout_margin="5dp"
             android:gravity="center"
-            android:padding="8dp"
-            android:text="@string/back"
-            android:textColor="@android:color/black" />
+            android:padding="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <androidx.viewpager2.widget.ViewPager2

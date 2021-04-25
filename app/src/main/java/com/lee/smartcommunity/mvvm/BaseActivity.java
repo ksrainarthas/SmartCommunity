@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
@@ -39,11 +38,10 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
 
     protected Context mContext;
 
-    protected Toolbar toolbar;
-
     protected VB viewBinding;
 
     protected VM viewModel;
+
     private Timer timer;
 
     @Override
@@ -80,9 +78,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
             baseBinding.container.addView(view);
             setContentView(baseBinding.getRoot());
             initViewBinding("bind", View.class, view);
-            initToolBar(baseBinding.toolbar);
-            startTimer();
-            baseBinding.tvBack.setOnClickListener(v -> finish());
+            initBarView(baseBinding);
         } else {
             initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
             if (viewBinding != null) {
@@ -96,7 +92,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
         }
     }
 
-    private void startTimer() {
+    private void startTimer(ActivityBaseBinding baseBinding) {
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -122,6 +118,15 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     }
 
     /**
+     * 设置是否显示地址,只有首页显示
+     *
+     * @return 重写 返回true包含Address
+     */
+    protected boolean isShowAddress() {
+        return false;
+    }
+
+    /**
      * 反射初始化ViewBinding
      * ActivityBaseBinding.inflate()
      * ActivityBaseBinding.bind()
@@ -143,25 +148,15 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     }
 
     /**
-     * 初始化toolBar
+     * 初始化标题内容
      */
-    protected void initToolBar(Toolbar toolbar) {
-        this.toolbar = toolbar;
-        //try {
-        //    toolbar.setTitle(setTitle());
-        //    setSupportActionBar(toolbar);
-        //    ActionBar supportActionBar = getSupportActionBar();
-        //    if (supportActionBar != null) {
-        //        supportActionBar.setDisplayHomeAsUpEnabled(true);
-        //        toolbar.setNavigationOnClickListener(v -> finish());
-        //    }
-        //} catch (Exception e) {
-        //    e.printStackTrace();
-        //}
-    }
-
-    protected Toolbar getToolbar() {
-        return toolbar;
+    protected void initBarView(ActivityBaseBinding baseBinding) {
+        startTimer(baseBinding);
+        baseBinding.tvBack.setOnClickListener(v -> finish());
+        baseBinding.tvTitle.setText(setTitle());
+        if (isShowAddress()) {
+            baseBinding.tvAddress.setVisibility(View.VISIBLE);
+        }
     }
 
     /**

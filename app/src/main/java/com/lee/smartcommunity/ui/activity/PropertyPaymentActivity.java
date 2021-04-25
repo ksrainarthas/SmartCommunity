@@ -5,11 +5,21 @@ import com.lee.smartcommunity.databinding.ActivityPropertyPaymentBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.viewmodel.MainViewModel;
 
+/**
+ * 物业缴费
+ *
+ * @author Lee
+ */
 public class PropertyPaymentActivity extends BaseActivity<ActivityPropertyPaymentBinding, MainViewModel> {
 
     @Override
     protected int getLayoutId() {
         return R.layout.activity_property_payment;
+    }
+
+    @Override
+    protected String setTitle() {
+        return getString(R.string.property_payment);
     }
 
     @Override
