@@ -27,7 +27,25 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
+
+            <TextView
+                style="@style/area_list_style"
+                android:text="@string/online_repair_commit"
+                android:layout_marginTop="10dp"/>
+
+            <ImageView
+                android:id="@+id/iv_qrcode"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                style="@style/area_list_style"
+                android:text="@string/area_list_wechat_publish"/>
 
         </LinearLayout>
 

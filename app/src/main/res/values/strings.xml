@@ -26,4 +26,6 @@
     <string name="address">诺瑞德商务广场</string>
     <string name="repair_status_undone">未处理</string>
     <string name="repair_status_done">已处理</string>
+    <string name="area_list_wechat_publish">微信扫一扫手机发布</string>
+    <string name="online_repair_commit">在线报修提交</string>
 </resources>
