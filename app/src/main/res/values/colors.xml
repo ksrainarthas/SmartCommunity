@@ -6,4 +6,6 @@
     <color name="guide_line">#bbbbbb</color>
     <color name="building_intercom_pre">#ae3232</color>
     <color name="border">#CDCDCD</color>
+    <color name="repair_status_done">#3fff01</color>
+    <color name="repair_status_undone">#ff0101</color>
 </resources>

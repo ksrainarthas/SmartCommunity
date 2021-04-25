@@ -179,7 +179,7 @@ public class DrawableTextView extends AppCompatTextView {
 
         // 如果标识是显示，则设置红点位置及大小并显示
         if (mTipVisibility == 1) {
-            canvas.drawCircle(getWidth()-10, -60, 10, mPaint);
+            canvas.drawCircle(getWidth()-12, -drawablePadding, 10, mPaint);
         }
     }
 

@@ -11,6 +11,7 @@ import com.lee.retrofit.model.Resource;
 import com.lee.retrofit.network.NetworkOnlyResource;
 import com.lee.retrofit.utils.RetrofitUtils;
 import com.lee.smartcommunity.model.AnnouncementResult;
+import com.lee.smartcommunity.model.AreaListResult;
 
 import java.util.HashMap;
 
@@ -45,6 +46,25 @@ public class AppTask {
 
             @Override
             protected AnnouncementResult transformRequestType(AnnouncementResult announcementResult) {
+                return announcementResult;
+            }
+        }.asLiveData();
+    }
+
+    public LiveData<Resource<AreaListResult>> getAreaList(int villageId, int bindId) {
+        return new NetworkOnlyResource<AreaListResult, AreaListResult>() {
+
+            @Override
+            protected LiveData<AreaListResult> createCall() {
+                HashMap<String, Object> body = new HashMap<>();
+                body.put("villageId", villageId);
+                body.put("bindId", bindId);
+                RequestBody requestBody = RetrofitUtils.createJsonRequestBody(body);
+                return appService.getAreaList(requestBody);
+            }
+
+            @Override
+            protected AreaListResult transformRequestType(AreaListResult announcementResult) {
                 return announcementResult;
             }
         }.asLiveData();

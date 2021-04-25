@@ -15,4 +15,7 @@ public class AppUrl {
 
     //获取通知公告
     public static final String GET_ANNOUNCEMENT = "api.php?g=Api&c=House&a=getNews";
+
+    //获取小区报修列表
+    public static final String GET_AREA_LIST = "api.php?g=Api&c=House&a=getRepair";
 }
