@@ -5,12 +5,12 @@ import androidx.annotation.NonNull;
 import java.util.List;
 
 /**
- * 通知公告 请求回调
- * 文件名: AnnouncementResult
+ * 获取快店 分类ID、分类名称、子分类ID、子分类名称 请求回调
+ * 文件名: CommodityCategoryResult
  * 创建者: WangYu
- * 创建日期: 2021/4/16 9:02
+ * 创建日期: 2021/4/25 10:11
  */
-public class AnnouncementResult {
+public class CommodityCategoryResult {
     private int error_code;
     private String msg;
     private List<DataBean> data;
@@ -40,51 +40,41 @@ public class AnnouncementResult {
     }
 
     public static class DataBean {
-        private String id;
-        private String title;
-        private String content;
-        private String add_time;
+        private String sort_id;
+        private String sort_name;
+        private String fid;
 
-        public String getId() {
-            return id;
+        public String getSort_id() {
+            return sort_id;
         }
 
-        public void setId(String id) {
-            this.id = id;
+        public void setSort_id(String sort_id) {
+            this.sort_id = sort_id;
         }
 
-        public String getTitle() {
-            return title;
+        public String getSort_name() {
+            return sort_name;
         }
 
-        public void setTitle(String title) {
-            this.title = title;
+        public void setSort_name(String sort_name) {
+            this.sort_name = sort_name;
         }
 
-        public String getContent() {
-            return content;
+        public String getFid() {
+            return fid;
         }
 
-        public void setContent(String content) {
-            this.content = content;
-        }
-
-        public String getAdd_time() {
-            return add_time;
-        }
-
-        public void setAdd_time(String add_time) {
-            this.add_time = add_time;
+        public void setFid(String fid) {
+            this.fid = fid;
         }
 
         @NonNull
         @Override
         public String toString() {
             return "DataBean{" +
-                    "id='" + id + '\'' +
-                    ", title='" + title + '\'' +
-                    ", content='" + content + '\'' +
-                    ", add_time='" + add_time + '\'' +
+                    "sort_id='" + sort_id + '\'' +
+                    ", sort_name='" + sort_name + '\'' +
+                    ", fid='" + fid + '\'' +
                     '}';
         }
     }
@@ -92,7 +82,7 @@ public class AnnouncementResult {
     @NonNull
     @Override
     public String toString() {
-        return "AnnouncementResult{" +
+        return "CommodityCategoryResult{" +
                 "error_code=" + error_code +
                 ", msg='" + msg + '\'' +
                 ", data=" + data +
