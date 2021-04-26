@@ -28,4 +28,6 @@
     <string name="repair_status_done">已处理</string>
     <string name="area_list_wechat_publish">微信扫一扫手机发布</string>
     <string name="online_repair_commit">在线报修提交</string>
+    <string name="price_value">￥%1$s</string>
+    <string name="member_price">会员价：</string>
 </resources>
