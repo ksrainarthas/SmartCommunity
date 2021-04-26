@@ -2,6 +2,7 @@ package com.lee.smartcommunity.model;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ public class GetShopGoodsResult {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         private String goods_id;
         private String name;
         private String image;
