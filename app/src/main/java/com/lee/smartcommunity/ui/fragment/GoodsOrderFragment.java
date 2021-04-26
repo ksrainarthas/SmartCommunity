@@ -2,7 +2,7 @@ package com.lee.smartcommunity.ui.fragment;
 
 import android.os.Bundle;
 
-import com.lee.smartcommunity.databinding.FragmentCommodityOrderBinding;
+import com.lee.smartcommunity.databinding.FragmentGoodsOrderBinding;
 import com.lee.smartcommunity.mvvm.BaseLazyFragment;
 import com.lee.smartcommunity.mvvm.BaseViewModel;
 import com.lee.utils.LogUtils;
@@ -12,7 +12,7 @@ import com.lee.utils.LogUtils;
  *
  * @author Lee
  */
-public class CommodityOrderFragment extends BaseLazyFragment<FragmentCommodityOrderBinding, BaseViewModel> {
+public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBinding, BaseViewModel> {
     private String key;
 
     @Override

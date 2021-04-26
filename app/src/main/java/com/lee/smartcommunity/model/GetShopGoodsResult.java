@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 根据 分类ID 获取商品列表 请求回调
- * 文件名: CommodityResult
+ * 文件名: GetShopGoodsResult
  * 创建者: WangYu
  * 创建日期: 2021/4/25 10:13
  */
@@ -122,7 +122,7 @@ public class GetShopGoodsResult {
     @NonNull
     @Override
     public String toString() {
-        return "CommodityResult{" +
+        return "GetShopGoodsResult{" +
                 "error_code=" + error_code +
                 ", msg='" + msg + '\'' +
                 ", data=" + data +

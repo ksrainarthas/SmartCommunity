@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 获取快店 分类ID、分类名称、子分类ID、子分类名称 请求回调
- * 文件名: CommodityCategoryResult
+ * 文件名: GetShopGoodsCategoryResult
  * 创建者: WangYu
  * 创建日期: 2021/4/25 10:11
  */
@@ -82,7 +82,7 @@ public class GetShopGoodsCategoryResult {
     @NonNull
     @Override
     public String toString() {
-        return "CommodityCategoryResult{" +
+        return "GetShopGoodsCategoryResult{" +
                 "error_code=" + error_code +
                 ", msg='" + msg + '\'' +
                 ", data=" + data +

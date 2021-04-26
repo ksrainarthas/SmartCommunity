@@ -3,7 +3,7 @@
     <string name="health_manage">健康管理</string>
     <string name="news">通知公告</string>
     <string name="online_property">线上物业</string>
-    <string name="commodity_order">商品订购</string>
+    <string name="goods_order">商品订购</string>
     <string name="service_order">服务下单</string>
     <string name="building_intercom">楼宇对讲</string>
     <string name="elevator_call">电梯呼叫</string>
@@ -13,7 +13,7 @@
     <string name="guest_invitation">访客邀请</string>
     <string name="litdu_call_property">小度小度，呼叫物业</string>
     <string name="litdu_call_elevator">小度小度，呼叫电梯</string>
-    <string name="litdu_call_commodity">小度小度，商品订购</string>
+    <string name="litdu_call_goods">小度小度，商品订购</string>
     <string name="litdu_call_pay">小度小度，在线缴费</string>
     <string name="litdu_call_news">小度小度，通知公告</string>
     <string name="toolbar_back">返回</string>

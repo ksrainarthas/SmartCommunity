@@ -36,8 +36,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, AppViewModel
         viewBinding.tvOnlineProperty.setOnClickListener(v -> {
             startActivity(OnlinePropertyActivity.class);
         });
-        viewBinding.tvCommodityOrder.setOnClickListener(v -> {
-            startActivity(CommodityOrderActivity.class);
+        viewBinding.tvGoodsOrder.setOnClickListener(v -> {
+            startActivity(GoodsOrderActivity.class);
         });
         viewBinding.tvServiceOrder.setOnClickListener(v -> {
             startActivity(ServiceOrderActivity.class);

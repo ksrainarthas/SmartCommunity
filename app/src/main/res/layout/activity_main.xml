@@ -41,10 +41,10 @@
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
-                    android:id="@+id/tv_commodity_order"
+                    android:id="@+id/tv_goods_order"
                     style="@style/main_text_first"
                     android:background="@drawable/bg_rel_normal"
-                    android:text="@string/commodity_order"
+                    android:text="@string/goods_order"
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
@@ -118,7 +118,7 @@
         <TextView
             style="@style/main_text_bottom"
             android:background="@drawable/bg_rel_normal"
-            android:text="@string/litdu_call_commodity"
+            android:text="@string/litdu_call_goods"
             android:textSize="10sp" />
 
         <TextView

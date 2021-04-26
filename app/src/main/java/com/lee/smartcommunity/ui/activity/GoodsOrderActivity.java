@@ -8,24 +8,24 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.lee.smartcommunity.R;
-import com.lee.smartcommunity.databinding.ActivityCommodityOrderBinding;
+import com.lee.smartcommunity.databinding.ActivityGoodsOrderBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.ui.fragment.CommodityOrderFragment;
+import com.lee.smartcommunity.ui.fragment.GoodsOrderFragment;
 import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 /**
  * 商品订购
- * 文件名: CommodityOrderActivity
+ * 文件名: GoodsOrderActivity
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:38
  */
-public class CommodityOrderActivity extends BaseActivity<ActivityCommodityOrderBinding, AppViewModel> {
+public class GoodsOrderActivity extends BaseActivity<ActivityGoodsOrderBinding, AppViewModel> {
 
     private String[] titles;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_commodity_order;
+        return R.layout.activity_goods_order;
     }
 
     @Override
@@ -49,11 +49,11 @@ public class CommodityOrderActivity extends BaseActivity<ActivityCommodityOrderB
         @NonNull
         @Override
         public Fragment createFragment(int position) {
-            CommodityOrderFragment commodityOrderFragment = new CommodityOrderFragment();
+            GoodsOrderFragment goodsOrderFragment = new GoodsOrderFragment();
             Bundle bundle = new Bundle();
             bundle.putString("key", titles[position]);
-            commodityOrderFragment.setArguments(bundle);
-            return commodityOrderFragment;
+            goodsOrderFragment.setArguments(bundle);
+            return goodsOrderFragment;
         }
 
         @Override

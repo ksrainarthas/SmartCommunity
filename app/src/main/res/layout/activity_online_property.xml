@@ -95,7 +95,7 @@
         <TextView
             style="@style/main_text_bottom"
             android:background="@drawable/bg_rel_normal"
-            android:text="@string/litdu_call_commodity"
+            android:text="@string/litdu_call_goods"
             android:textSize="10sp" />
 
         <TextView

@@ -42,7 +42,7 @@
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name=".ui.activity.CommodityOrderActivity"
+            android:name=".ui.activity.GoodsOrderActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
             android:screenOrientation="sensorLandscape" />
         <activity
