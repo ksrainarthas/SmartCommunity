@@ -28,6 +28,7 @@
         style="@style/repair_list_style"
         android:layout_toStartOf="@id/tv_status"
         android:layout_marginRight="8dp"
+        android:textColor="@android:color/black"
         android:gravity="center"
         android:text="25/04" />
 
@@ -37,6 +38,7 @@
         android:layout_marginStart="8dp"
         android:layout_toStartOf="@id/tv_time"
         android:layout_toEndOf="@id/tv_num"
+        android:textColor="@android:color/black"
         android:ellipsize="marquee"
         android:gravity="center_vertical"
         android:text="25/04" />

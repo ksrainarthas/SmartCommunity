@@ -30,4 +30,8 @@
     <string name="online_repair_commit">在线报修提交</string>
     <string name="price_value">￥%1$s</string>
     <string name="member_price">会员价：</string>
+    <string name="property_payment_time">2021年上半年物业缴费</string>
+    <string name="property_payment_wechat_pay">微信扫一扫手机缴费</string>
+    <string name="status_unpay">未交费</string>
+    <string name="status_pay">已交费</string>
 </resources>

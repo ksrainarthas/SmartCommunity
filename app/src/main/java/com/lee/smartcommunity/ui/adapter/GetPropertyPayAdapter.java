@@ -5,8 +5,7 @@ import android.content.Context;
 import com.lee.adapter.recyclerview.CommonAdapter;
 import com.lee.adapter.recyclerview.base.ViewHolder;
 import com.lee.smartcommunity.R;
-import com.lee.smartcommunity.model.GetRepairResult;
-import com.lee.utils.TimeUtils;
+import com.lee.smartcommunity.model.GetPropertyResult;
 
 import java.util.List;
 
@@ -15,27 +14,27 @@ import java.util.List;
  *
  * @author Lee
  */
-public class GetRepairAdapter extends CommonAdapter<GetRepairResult.DataBean> {
+public class GetPropertyPayAdapter extends CommonAdapter<GetPropertyResult.DataBean> {
 
     private final Context context;
 
-    public GetRepairAdapter(Context context, int layoutId, List<GetRepairResult.DataBean> data) {
+    public GetPropertyPayAdapter(Context context, int layoutId, List<GetPropertyResult.DataBean> data) {
         super(context, layoutId, data);
         this.context = context;
     }
 
     @Override
-    public void convert(ViewHolder holder, GetRepairResult.DataBean dataBean, int position) {
+    public void convert(ViewHolder holder, GetPropertyResult.DataBean dataBean, int position) {
         holder.setText(R.id.tv_num, String.valueOf(position + 1));
-        holder.setText(R.id.tv_content, dataBean.getContent());
+        holder.setText(R.id.tv_content, dataBean.getDiy_content());
         holder.getView(R.id.tv_content).requestFocus();
-        holder.setText(R.id.tv_time, TimeUtils.millis2String(Long.parseLong(dataBean.getTime() + "000"), TimeUtils.getSafeDateFormat("MM/dd")));
-        String status = dataBean.getStatus();
+        holder.setText(R.id.tv_time, dataBean.getProperty_year_name()+"/"+dataBean.getProperty_month_num());
+        String status = String.valueOf(dataBean.getProperty_price());
         if (status == null || status.equals("0")) {
-            holder.setText(R.id.tv_status, context.getResources().getString(R.string.repair_status_undone));
+            holder.setText(R.id.tv_status, context.getResources().getString(R.string.status_unpay));
             holder.setBackgroundColor(R.id.tv_status, context.getResources().getColor(R.color.repair_status_undone));
         } else {
-            holder.setText(R.id.tv_status, context.getResources().getString(R.string.repair_status_done));
+            holder.setText(R.id.tv_status, context.getResources().getString(R.string.status_pay));
             holder.setBackgroundColor(R.id.tv_status, context.getResources().getColor(R.color.repair_status_done));
         }
     }
