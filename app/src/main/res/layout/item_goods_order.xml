@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:layout_margin="5dp"
         android:contentDescription="@null"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_loading"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"

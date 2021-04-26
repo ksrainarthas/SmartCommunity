@@ -1,19 +1,26 @@
 package com.lee.smartcommunity.ui.activity;
 
 import android.content.Intent;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.databinding.ActivityGoodsDetailBinding;
 import com.lee.smartcommunity.model.GetShopGoodsResult;
 import com.lee.smartcommunity.mvvm.BaseActivity;
+import com.lee.smartcommunity.ui.adapter.GoodsDetailLabelsAdapter;
+import com.lee.smartcommunity.ui.decoration.VerticalDividerItemItemDecoration;
+import com.lee.smartcommunity.utils.TextViewUtils;
 import com.lee.smartcommunity.viewmodel.AppViewModel;
 import com.lee.utils.ToastUtils;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding, AppViewModel> {
+
+    String[] labels = {"汁水饱满", "新鲜到家", "经济实惠", "产地直采"};
 
     @Override
     protected int getLayoutId() {
@@ -30,26 +37,29 @@ public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding
         Intent intent = getIntent();
         if (intent != null) {
             GetShopGoodsResult.DataBean dataBean = (GetShopGoodsResult.DataBean) intent.getSerializableExtra("goods_detail");
-            Glide.with(this)
-                    .load(dataBean.getImage())
-                    .placeholder(R.drawable.ic_loading)
-                    .fallback(R.drawable.ic_loading)
-                    .error(R.drawable.ic_loading)
-                    .into(viewBinding.ivImage);
-            viewBinding.tvName.setText(dataBean.getName());
-            viewBinding.button.setOnClickListener(v -> {
-                ToastUtils.showShort("确认购买");
-            });
-            String selling_price = this.getString(R.string.selling_price_value, dataBean.getPrice());
-            SpannableStringBuilder ssb = new SpannableStringBuilder(selling_price);
-            ForegroundColorSpan fcs = new ForegroundColorSpan(getResources().getColor(R.color.goods_price));
-            ssb.setSpan(fcs, 4, selling_price.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            viewBinding.tvSellingPrice.setText(ssb);
-            String member_price = this.getString(R.string.member_price_value, dataBean.getNb_price());
-            SpannableStringBuilder ssb2 = new SpannableStringBuilder(member_price);
-            ForegroundColorSpan fcs2 = new ForegroundColorSpan(getResources().getColor(R.color.goods_price));
-            ssb2.setSpan(fcs2, 4, member_price.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            viewBinding.tvMemberPrice.setText(ssb2);
+            if (dataBean != null) {
+                Glide.with(this)
+                        .load(dataBean.getImage())
+                        .placeholder(R.drawable.ic_loading)
+                        .fallback(R.drawable.ic_loading)
+                        .error(R.drawable.ic_loading)
+                        .into(viewBinding.ivImage);
+                viewBinding.tvName.setText(dataBean.getName());
+                viewBinding.confirmPurchase.setOnClickListener(v -> {
+                    ToastUtils.showShort("确认购买");
+                });
+                TextViewUtils.setSpannable(this, viewBinding.tvSellingPrice, this.getString(R.string.selling_price_value, dataBean.getPrice()), 4, false);
+                TextViewUtils.setSpannable(this, viewBinding.tvMemberPrice, this.getString(R.string.member_price_value, dataBean.getNb_price()), 4, false);
+                LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+                viewBinding.rvLabels.setLayoutManager(llm);
+                viewBinding.rvLabels.addItemDecoration(new VerticalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(20).build());
+                // 假数据
+                List<String> list = Arrays.asList(labels);
+                viewBinding.rvLabels.setAdapter(new GoodsDetailLabelsAdapter(this, R.layout.item_goods_detail_labels, list));
+                // 假数据
+                TextViewUtils.setSpannable(this, viewBinding.tvCommentsValue, this.getString(R.string.comments_value, "5.3万+"), 2, true);
+                TextViewUtils.setSpannable(this, viewBinding.tvFavorableRate, this.getString(R.string.favorable_rate, "99%"), 3, true);
+            }
         }
     }
 }
