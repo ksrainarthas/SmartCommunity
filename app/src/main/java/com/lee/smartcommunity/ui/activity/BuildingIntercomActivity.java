@@ -3,7 +3,7 @@ package com.lee.smartcommunity.ui.activity;
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.databinding.ActivityBuildingIntercomBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 /**
  * 楼宇对讲
@@ -11,7 +11,7 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:49
  */
-public class BuildingIntercomActivity extends BaseActivity<ActivityBuildingIntercomBinding, MainViewModel> {
+public class BuildingIntercomActivity extends BaseActivity<ActivityBuildingIntercomBinding, AppViewModel> {
 
     @Override
     protected int getLayoutId() {

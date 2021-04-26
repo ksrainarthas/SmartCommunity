@@ -11,7 +11,7 @@ import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.databinding.ActivityCommodityOrderBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.ui.fragment.CommodityOrderFragment;
-import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 /**
  * 商品订购
@@ -19,7 +19,7 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:38
  */
-public class CommodityOrderActivity extends BaseActivity<ActivityCommodityOrderBinding, MainViewModel> {
+public class CommodityOrderActivity extends BaseActivity<ActivityCommodityOrderBinding, AppViewModel> {
 
     private String[] titles;
 

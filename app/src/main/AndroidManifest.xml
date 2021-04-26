@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.AnnouncementActivity"
+            android:name=".ui.activity.NewsActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
             android:screenOrientation="sensorLandscape" />
         <activity

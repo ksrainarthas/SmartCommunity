@@ -3,7 +3,7 @@ package com.lee.smartcommunity.ui.activity;
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.databinding.ActivityServiceOrderBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 /**
  * 服务下单
@@ -11,7 +11,7 @@ import com.lee.smartcommunity.viewmodel.MainViewModel;
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:40
  */
-public class ServiceOrderActivity extends BaseActivity<ActivityServiceOrderBinding, MainViewModel> {
+public class ServiceOrderActivity extends BaseActivity<ActivityServiceOrderBinding, AppViewModel> {
 
     @Override
     protected int getLayoutId() {

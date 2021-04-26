@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:drawablePadding="20dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/call_property"
@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:drawablePadding="20dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/online_repair"
@@ -48,7 +48,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:drawablePadding="20dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/property_payment"
@@ -62,7 +62,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:drawablePadding="20dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/guest_invitation"
@@ -82,31 +82,31 @@
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_property"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_elevator"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_commodity"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_pay"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_announcement"
             android:textSize="10sp" />
     </LinearLayout>

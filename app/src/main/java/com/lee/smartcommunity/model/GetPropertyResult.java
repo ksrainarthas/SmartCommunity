@@ -10,7 +10,7 @@ import java.util.List;
  * 创建者: WangYu
  * 创建日期: 2021/4/25 10:07
  */
-public class PropertyPaymentResult {
+public class GetPropertyResult {
     private int error_code;
     private String msg;
     private List<DataBean> data;

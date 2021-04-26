@@ -6,7 +6,7 @@
     android:layout_marginLeft="@dimen/activity_base_margin"
     android:layout_marginRight="@dimen/activity_base_margin"
     android:layout_marginBottom="@dimen/activity_base_margin"
-    android:background="@drawable/bg_rel">
+    android:background="@drawable/bg_rel_normal">
 
     <ImageView
         android:id="@+id/iv_elevator"

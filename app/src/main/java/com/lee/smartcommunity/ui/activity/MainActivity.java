@@ -4,14 +4,14 @@ import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.app.AppManager;
 import com.lee.smartcommunity.databinding.ActivityMainBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 /**
  * 首页
  *
  * @author Lee
  */
-public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
+public class MainActivity extends BaseActivity<ActivityMainBinding, AppViewModel> {
 
     @Override
     protected int getLayoutId() {
@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     private void initViewClick() {
         viewBinding.tvAnnouncement.setTipVisibility(1);
         viewBinding.tvAnnouncement.setOnClickListener(v -> {
-            startActivity(AnnouncementActivity.class);
+            startActivity(NewsActivity.class);
         });
         viewBinding.tvOnlineProperty.setOnClickListener(v -> {
             startActivity(OnlinePropertyActivity.class);

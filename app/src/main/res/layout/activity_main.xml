@@ -29,28 +29,28 @@
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_announcement"
                     style="@style/main_text_first"
-                    android:background="@drawable/bg_rel"
+                    android:background="@drawable/bg_rel_normal"
                     android:text="@string/announcement"
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_online_property"
                     style="@style/main_text_first"
-                    android:background="@drawable/bg_rel"
+                    android:background="@drawable/bg_rel_normal"
                     android:text="@string/online_property"
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_commodity_order"
                     style="@style/main_text_first"
-                    android:background="@drawable/bg_rel"
+                    android:background="@drawable/bg_rel_normal"
                     android:text="@string/commodity_order"
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_service_order"
                     style="@style/main_text_first"
-                    android:background="@drawable/bg_rel"
+                    android:background="@drawable/bg_rel_normal"
                     android:text="@string/service_order"
                     app:topDrawable="@mipmap/ic_launcher" />
 
@@ -65,14 +65,14 @@
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_building_intercom"
                     style="@style/main_text_second"
-                    android:background="@drawable/bg_rel"
+                    android:background="@drawable/bg_rel_normal"
                     android:text="@string/building_intercom"
                     app:leftDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
                     android:id="@+id/tv_elevator_call"
                     style="@style/main_text_second"
-                    android:background="@drawable/bg_rel"
+                    android:background="@drawable/bg_rel_normal"
                     android:text="@string/elevator_call"
                     app:leftDrawable="@mipmap/ic_launcher" />
             </LinearLayout>
@@ -85,7 +85,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:drawablePadding="20dp"
             android:gravity="bottom|center_horizontal"
             android:text="@string/health_manage"
@@ -105,31 +105,31 @@
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_property"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_elevator"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_commodity"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_pay"
             android:textSize="10sp" />
 
         <TextView
             style="@style/main_text_bottom"
-            android:background="@drawable/bg_rel"
+            android:background="@drawable/bg_rel_normal"
             android:text="@string/litdu_call_announcement"
             android:textSize="10sp" />
     </LinearLayout>

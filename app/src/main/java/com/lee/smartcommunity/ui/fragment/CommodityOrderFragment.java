@@ -8,6 +8,8 @@ import com.lee.smartcommunity.mvvm.BaseViewModel;
 import com.lee.utils.LogUtils;
 
 /**
+ * 商品订单
+ *
  * @author Lee
  */
 public class CommodityOrderFragment extends BaseLazyFragment<FragmentCommodityOrderBinding, BaseViewModel> {

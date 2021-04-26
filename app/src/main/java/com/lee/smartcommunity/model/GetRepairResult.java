@@ -5,12 +5,12 @@ import androidx.annotation.NonNull;
 import java.util.List;
 
 /**
- * 通知公告 请求回调
- * 文件名: AnnouncementResult
+ * 获取小区报修列表 请求回调
+ * 文件名: CommunityRepairResult
  * 创建者: WangYu
- * 创建日期: 2021/4/16 9:02
+ * 创建日期: 2021/4/25 9:57
  */
-public class AnnouncementResult {
+public class GetRepairResult {
     private int error_code;
     private String msg;
     private List<DataBean> data;
@@ -41,9 +41,12 @@ public class AnnouncementResult {
 
     public static class DataBean {
         private String id;
-        private String title;
         private String content;
-        private String add_time;
+        private String pic;
+        private String time;
+        private String status;
+        private Object name;
+        private Object phone;
 
         public String getId() {
             return id;
@@ -51,14 +54,6 @@ public class AnnouncementResult {
 
         public void setId(String id) {
             this.id = id;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
         }
 
         public String getContent() {
@@ -69,12 +64,44 @@ public class AnnouncementResult {
             this.content = content;
         }
 
-        public String getAdd_time() {
-            return add_time;
+        public String getPic() {
+            return pic;
         }
 
-        public void setAdd_time(String add_time) {
-            this.add_time = add_time;
+        public void setPic(String pic) {
+            this.pic = pic;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+
+        public Object getName() {
+            return name;
+        }
+
+        public void setName(Object name) {
+            this.name = name;
+        }
+
+        public Object getPhone() {
+            return phone;
+        }
+
+        public void setPhone(Object phone) {
+            this.phone = phone;
         }
 
         @NonNull
@@ -82,9 +109,12 @@ public class AnnouncementResult {
         public String toString() {
             return "DataBean{" +
                     "id='" + id + '\'' +
-                    ", title='" + title + '\'' +
                     ", content='" + content + '\'' +
-                    ", add_time='" + add_time + '\'' +
+                    ", pic='" + pic + '\'' +
+                    ", time='" + time + '\'' +
+                    ", status='" + status + '\'' +
+                    ", name=" + name +
+                    ", phone=" + phone +
                     '}';
         }
     }
@@ -92,7 +122,7 @@ public class AnnouncementResult {
     @NonNull
     @Override
     public String toString() {
-        return "AnnouncementResult{" +
+        return "CommunityRepairResult{" +
                 "error_code=" + error_code +
                 ", msg='" + msg + '\'' +
                 ", data=" + data +

@@ -5,12 +5,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.retrofit.model.Status;
 import com.lee.smartcommunity.R;
-import com.lee.smartcommunity.databinding.ActivityAnnouncementBinding;
-import com.lee.smartcommunity.model.AnnouncementResult;
+import com.lee.smartcommunity.databinding.ActivityNewsBinding;
+import com.lee.smartcommunity.model.GetNewsResult;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.ui.adapter.AnnouncementAdapter;
+import com.lee.smartcommunity.ui.adapter.GetNewsAdapter;
 import com.lee.smartcommunity.ui.decoration.HorizontalDividerItemItemDecoration;
-import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.smartcommunity.viewmodel.AppViewModel;
 import com.lee.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -18,18 +18,18 @@ import java.util.List;
 
 /**
  * 通知公告
- * 文件名: AnnouncementActivity
+ * 文件名: GetNewsActivity
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:31
  */
-public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBinding, MainViewModel> {
+public class NewsActivity extends BaseActivity<ActivityNewsBinding, AppViewModel> {
 
-    private List<AnnouncementResult.DataBean> list;
-    private AnnouncementAdapter announcementAdapter;
+    private List<GetNewsResult.DataBean> list;
+    private GetNewsAdapter announcementAdapter;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_announcement;
+        return R.layout.activity_news;
     }
 
     @Override
@@ -43,10 +43,10 @@ public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBindi
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         viewBinding.rvAnnouncement.setLayoutManager(linearLayoutManager);
         viewBinding.rvAnnouncement.addItemDecoration(new HorizontalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(30).build());
-        announcementAdapter = new AnnouncementAdapter(this, list);
+        announcementAdapter = new GetNewsAdapter(this, list);
         viewBinding.rvAnnouncement.setAdapter(announcementAdapter);
 
-        viewModel.getAnnouncementResult().observe(this, resource -> {
+        viewModel.getNewsResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {
                 if (resource.data != null) {
                     putData(resource.data.getData());
@@ -55,10 +55,10 @@ public class AnnouncementActivity extends BaseActivity<ActivityAnnouncementBindi
                 ToastUtils.showShort("网络请求失败");
             }
         });
-        viewModel.getAnnouncement(1);
+        viewModel.getNews(1);
     }
 
-    private void putData(List<AnnouncementResult.DataBean> data) {
+    private void putData(List<GetNewsResult.DataBean> data) {
         list.clear();
         list.addAll(data);
         announcementAdapter.notifyDataSetChanged();

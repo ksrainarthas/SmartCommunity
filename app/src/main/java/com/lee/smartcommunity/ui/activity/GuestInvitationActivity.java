@@ -3,14 +3,14 @@ package com.lee.smartcommunity.ui.activity;
 import com.lee.smartcommunity.R;
 import com.lee.smartcommunity.databinding.ActivityGuestInvitationBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
-import com.lee.smartcommunity.viewmodel.MainViewModel;
+import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 /**
  * 访客邀请
  *
  * @author Lee
  */
-public class GuestInvitationActivity extends BaseActivity<ActivityGuestInvitationBinding, MainViewModel> {
+public class GuestInvitationActivity extends BaseActivity<ActivityGuestInvitationBinding, AppViewModel> {
 
     @Override
     protected int getLayoutId() {

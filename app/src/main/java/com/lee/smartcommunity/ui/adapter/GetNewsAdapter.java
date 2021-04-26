@@ -10,22 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lee.smartcommunity.R;
-import com.lee.smartcommunity.model.AnnouncementResult;
+import com.lee.smartcommunity.model.GetNewsResult;
 import com.tencent.smtt.sdk.WebView;
 
 import java.util.List;
 
 /**
- * 文件名: AnnouncementAdapter
+ * 通知公告adapter
+ * 文件名: GetNewsAdapter
  * 创建者: WangYu
  * 创建日期: 2021/4/13 14:47
  */
-public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapter.AnnouncementVH> {
+public class GetNewsAdapter extends RecyclerView.Adapter<GetNewsAdapter.AnnouncementVH> {
 
     private Context context;
-    private List<AnnouncementResult.DataBean> list;
+    private List<GetNewsResult.DataBean> list;
 
-    public AnnouncementAdapter(Context context, List<AnnouncementResult.DataBean> list) {
+    public GetNewsAdapter(Context context, List<GetNewsResult.DataBean> list) {
         this.context = context;
         this.list = list;
     }
@@ -33,13 +34,13 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
     @NonNull
     @Override
     public AnnouncementVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_announcement, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
         return new AnnouncementVH(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AnnouncementVH holder, int position) {
-        AnnouncementResult.DataBean dataBean = list.get(position);
+        GetNewsResult.DataBean dataBean = list.get(position);
         String title = dataBean.getTitle();
         holder.tv_title.setText(title);
         String content = dataBean.getContent();
