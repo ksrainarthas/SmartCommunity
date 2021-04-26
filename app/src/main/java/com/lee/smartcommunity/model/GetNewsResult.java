@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 通知公告 请求回调
- * 文件名: AnnouncementResult
+ * 文件名: GetNewsResult
  * 创建者: WangYu
  * 创建日期: 2021/4/16 9:02
  */
@@ -92,7 +92,7 @@ public class GetNewsResult {
     @NonNull
     @Override
     public String toString() {
-        return "AnnouncementResult{" +
+        return "GetNewsResult{" +
                 "error_code=" + error_code +
                 ", msg='" + msg + '\'' +
                 ", data=" + data +

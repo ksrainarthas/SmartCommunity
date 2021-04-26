@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">智慧社区</string>
     <string name="health_manage">健康管理</string>
-    <string name="announcement">通知公告</string>
+    <string name="news">通知公告</string>
     <string name="online_property">线上物业</string>
     <string name="commodity_order">商品订购</string>
     <string name="service_order">服务下单</string>
@@ -15,8 +15,8 @@
     <string name="litdu_call_elevator">小度小度，呼叫电梯</string>
     <string name="litdu_call_commodity">小度小度，商品订购</string>
     <string name="litdu_call_pay">小度小度，在线缴费</string>
-    <string name="litdu_call_announcement">小度小度，通知公告</string>
-    <string name="back">返回</string>
+    <string name="litdu_call_news">小度小度，通知公告</string>
+    <string name="toolbar_back">返回</string>
     <string name="elevator_floor_tip">电梯目前处于%d层，请尽快至电梯口乘坐哦</string>
     <string name="south_door">南门</string>
     <string name="north_door">北门</string>

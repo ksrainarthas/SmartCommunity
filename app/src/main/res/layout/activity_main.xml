@@ -27,10 +27,10 @@
                 android:orientation="horizontal">
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
-                    android:id="@+id/tv_announcement"
+                    android:id="@+id/tv_news"
                     style="@style/main_text_first"
                     android:background="@drawable/bg_rel_normal"
-                    android:text="@string/announcement"
+                    android:text="@string/news"
                     app:topDrawable="@mipmap/ic_launcher" />
 
                 <com.lee.smartcommunity.ui.view.DrawableTextView
@@ -130,7 +130,7 @@
         <TextView
             style="@style/main_text_bottom"
             android:background="@drawable/bg_rel_normal"
-            android:text="@string/litdu_call_announcement"
+            android:text="@string/litdu_call_news"
             android:textSize="10sp" />
     </LinearLayout>
 </RelativeLayout>

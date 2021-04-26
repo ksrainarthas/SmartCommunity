@@ -25,7 +25,7 @@ import java.util.List;
 public class NewsActivity extends BaseActivity<ActivityNewsBinding, AppViewModel> {
 
     private List<GetNewsResult.DataBean> list;
-    private GetNewsAdapter announcementAdapter;
+    private GetNewsAdapter adapter;
 
     @Override
     protected int getLayoutId() {
@@ -41,10 +41,10 @@ public class NewsActivity extends BaseActivity<ActivityNewsBinding, AppViewModel
     protected void initView() {
         list = new ArrayList<>();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-        viewBinding.rvAnnouncement.setLayoutManager(linearLayoutManager);
-        viewBinding.rvAnnouncement.addItemDecoration(new HorizontalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(30).build());
-        announcementAdapter = new GetNewsAdapter(this, list);
-        viewBinding.rvAnnouncement.setAdapter(announcementAdapter);
+        viewBinding.rvNews.setLayoutManager(linearLayoutManager);
+        viewBinding.rvNews.addItemDecoration(new HorizontalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(30).build());
+        adapter = new GetNewsAdapter(this, list);
+        viewBinding.rvNews.setAdapter(adapter);
 
         viewModel.getNewsResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {
@@ -61,6 +61,6 @@ public class NewsActivity extends BaseActivity<ActivityNewsBinding, AppViewModel
     private void putData(List<GetNewsResult.DataBean> data) {
         list.clear();
         list.addAll(data);
-        announcementAdapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
     }
 }

@@ -21,7 +21,7 @@ import java.util.List;
  * 创建者: WangYu
  * 创建日期: 2021/4/13 14:47
  */
-public class GetNewsAdapter extends RecyclerView.Adapter<GetNewsAdapter.AnnouncementVH> {
+public class GetNewsAdapter extends RecyclerView.Adapter<GetNewsAdapter.NewsVH> {
 
     private Context context;
     private List<GetNewsResult.DataBean> list;
@@ -33,13 +33,13 @@ public class GetNewsAdapter extends RecyclerView.Adapter<GetNewsAdapter.Announce
 
     @NonNull
     @Override
-    public AnnouncementVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public NewsVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_news, parent, false);
-        return new AnnouncementVH(view);
+        return new NewsVH(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AnnouncementVH holder, int position) {
+    public void onBindViewHolder(@NonNull NewsVH holder, int position) {
         GetNewsResult.DataBean dataBean = list.get(position);
         String title = dataBean.getTitle();
         holder.tv_title.setText(title);
@@ -59,11 +59,11 @@ public class GetNewsAdapter extends RecyclerView.Adapter<GetNewsAdapter.Announce
         return list.size();
     }
 
-    public static class AnnouncementVH extends RecyclerView.ViewHolder {
+    public static class NewsVH extends RecyclerView.ViewHolder {
         private TextView tv_title;
         private WebView wv_content;
 
-        public AnnouncementVH(@NonNull View itemView) {
+        public NewsVH(@NonNull View itemView) {
             super(itemView);
             tv_title = itemView.findViewById(R.id.tv_title);
             wv_content = itemView.findViewById(R.id.wv_content);

@@ -107,7 +107,7 @@
         <TextView
             style="@style/main_text_bottom"
             android:background="@drawable/bg_rel_normal"
-            android:text="@string/litdu_call_announcement"
+            android:text="@string/litdu_call_news"
             android:textSize="10sp" />
     </LinearLayout>
 </RelativeLayout>
