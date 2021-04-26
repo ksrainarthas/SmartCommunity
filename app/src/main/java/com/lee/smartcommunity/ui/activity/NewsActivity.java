@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * 通知公告
- * 文件名: GetNewsActivity
+ * 文件名: NewsActivity
  * 创建者: WangYu
  * 创建日期: 2021/4/13 11:31
  */
@@ -55,7 +55,7 @@ public class NewsActivity extends BaseActivity<ActivityNewsBinding, AppViewModel
                 ToastUtils.showShort("网络请求失败");
             }
         });
-        viewModel.getNews(1);
+        viewModel.getNews("1");
     }
 
     private void putData(List<GetNewsResult.DataBean> data) {

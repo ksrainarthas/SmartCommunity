@@ -19,8 +19,8 @@
             android:id="@+id/rv_repair_list"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="15dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:padding="15dp" />
 
         <LinearLayout
             android:id="@+id/ll_right"
@@ -32,20 +32,20 @@
 
             <TextView
                 style="@style/repair_list_style"
-                android:text="@string/online_repair_commit"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:text="@string/online_repair_commit" />
 
             <ImageView
                 android:id="@+id/iv_qrcode"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@mipmap/ic_launcher"
                 android:layout_marginTop="60dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/ic_launcher" />
 
             <TextView
                 style="@style/repair_list_style"
-                android:text="@string/area_list_wechat_publish"/>
+                android:text="@string/area_list_wechat_publish" />
 
         </LinearLayout>
 

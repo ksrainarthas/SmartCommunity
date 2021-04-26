@@ -54,6 +54,6 @@ public class OnlineRepairActivity extends BaseActivity<ActivityOnlineRepairBindi
                 ToastUtils.showShort("网络请求失败");
             }
         });
-        viewModel.getRepair(1, 13515);
+        viewModel.getRepair("1", "13515");
     }
 }
