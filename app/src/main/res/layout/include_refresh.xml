@@ -1,0 +1,26 @@
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlAccentColor="@color/colorAccent"
+    app:srlEnableHeaderTranslationContent="true"
+    app:srlEnableLoadMore="false">
+
+    <com.scwang.smart.refresh.header.MaterialHeader
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_goods"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:overScrollMode="never" />
+
+    <com.scwang.smart.refresh.footer.BallPulseFooter
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        app:srlAnimatingColor="@color/colorAccent" />
+
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

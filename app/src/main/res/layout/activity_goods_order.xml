@@ -17,16 +17,20 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
+            android:background="@drawable/ic_back"
             android:gravity="center"
             android:padding="5dp"
-            android:background="@drawable/ic_back"
             android:textColor="@android:color/black" />
 
         <com.lee.tablayout.SlidingTabLayout
             android:id="@+id/tabLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/tab_height"
             android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_toStartOf="@+id/tv_time"
+            android:layout_toEndOf="@+id/tv_back"
             app:tl_indicator_color="#000000"
             app:tl_indicator_corner_radius="@dimen/space_width_small"
             app:tl_indicator_width_equal_title="true"
