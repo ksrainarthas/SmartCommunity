@@ -18,6 +18,11 @@ import com.lee.utils.ToastUtils;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 商品详情
+ *
+ * @author Lee
+ */
 public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding, AppViewModel> {
 
     String[] labels = {"汁水饱满", "新鲜到家", "经济实惠", "产地直采"};
@@ -28,8 +33,8 @@ public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding
     }
 
     @Override
-    protected boolean isContainToolBar() {
-        return false;
+    protected String setTitle() {
+        return getString(R.string.goods_detail);
     }
 
     @Override

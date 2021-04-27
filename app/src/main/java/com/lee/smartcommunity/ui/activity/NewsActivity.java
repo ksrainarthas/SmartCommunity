@@ -38,6 +38,11 @@ public class NewsActivity extends BaseActivity<ActivityNewsBinding, AppViewModel
     }
 
     @Override
+    protected boolean isShowTime() {
+        return true;
+    }
+
+    @Override
     protected void initView() {
         list = new ArrayList<>();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);

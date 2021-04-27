@@ -8,7 +8,9 @@
     <string name="building_intercom">楼宇对讲</string>
     <string name="elevator_call">电梯呼叫</string>
     <string name="call_property">呼叫物业</string>
+    <string name="confirm_order">确认订单</string>
     <string name="online_repair">在线报修</string>
+    <string name="goods_detail">商品详情</string>
     <string name="property_payment">物业缴费</string>
     <string name="guest_invitation">访客邀请</string>
     <string name="litdu_call_property">小度小度，呼叫物业</string>
@@ -38,4 +40,5 @@
     <string name="selling_price_value">直销价：￥%1$s</string>
     <string name="member_price_value">会员价：￥%1$s</string>
     <string name="confirm_purchase">确认购买</string>
+    <string name="app_quit">再按一次退出</string>
 </resources>

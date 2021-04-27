@@ -19,8 +19,8 @@ public class ServiceOrderActivity extends BaseActivity<ActivityServiceOrderBindi
     }
 
     @Override
-    protected String setTitle() {
-        return getString(R.string.service_order);
+    protected boolean isContainToolBar() {
+        return false;
     }
 
     @Override

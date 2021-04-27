@@ -24,6 +24,11 @@ public class ElevatorCallActivity extends BaseActivity<ActivityElevatorCallBindi
     }
 
     @Override
+    protected boolean isShowTime() {
+        return true;
+    }
+
+    @Override
     protected void initView() {
 
     }

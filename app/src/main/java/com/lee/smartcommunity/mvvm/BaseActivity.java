@@ -14,6 +14,7 @@ import androidx.viewbinding.ViewBinding;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.lee.smartcommunity.databinding.ActivityBaseBinding;
+import com.lee.smartcommunity.ui.activity.MainActivity;
 import com.lee.utils.ThreadUtils;
 
 import java.lang.reflect.Method;
@@ -118,11 +119,38 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
     }
 
     /**
+     * 设置是否显示回到首页图片
+     *
+     * @return 重写 返回true显示图片
+     */
+    protected boolean isShowHomeIcon() {
+        return false;
+    }
+
+    /**
      * 设置是否显示地址,只有首页显示
      *
      * @return 重写 返回true包含Address
      */
     protected boolean isShowAddress() {
+        return false;
+    }
+
+    /**
+     * 设置是否显示图片
+     *
+     * @return 重写 返回true包含Head 默认显示, 头像界面多
+     */
+    protected boolean isShowHead() {
+        return true;
+    }
+
+    /**
+     * 设置是否显示时间
+     *
+     * @return 重写 返回true包含Time 默认不显示, 时间界面少
+     */
+    protected boolean isShowTime() {
         return false;
     }
 
@@ -151,11 +179,34 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
      * 初始化标题内容
      */
     protected void initBarView(ActivityBaseBinding baseBinding) {
-        startTimer(baseBinding);
         baseBinding.tvBack.setOnClickListener(v -> finish());
         baseBinding.tvTitle.setText(setTitle());
+        if (isShowHomeIcon()) {
+            baseBinding.tvHome.setVisibility(View.VISIBLE);
+            baseBinding.tvHome.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivityFinish(MainActivity.class);
+                }
+            });
+        } else {
+            baseBinding.tvHome.setVisibility(View.GONE);
+        }
         if (isShowAddress()) {
             baseBinding.tvAddress.setVisibility(View.VISIBLE);
+        }
+        if (isShowHead()) {
+            baseBinding.tvHead.setVisibility(View.VISIBLE);
+            baseBinding.tvTime.setVisibility(View.GONE);
+        } else {
+            baseBinding.tvHead.setVisibility(View.GONE);
+        }
+        if (isShowTime()) {
+            baseBinding.tvHead.setVisibility(View.GONE);
+            baseBinding.tvTime.setVisibility(View.VISIBLE);
+            startTimer(baseBinding);
+        } else {
+            baseBinding.tvTime.setVisibility(View.GONE);
         }
     }
 

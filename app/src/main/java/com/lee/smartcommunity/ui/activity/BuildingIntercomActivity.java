@@ -24,6 +24,11 @@ public class BuildingIntercomActivity extends BaseActivity<ActivityBuildingInter
     }
 
     @Override
+    protected boolean isShowTime() {
+        return true;
+    }
+
+    @Override
     protected void initView() {
 
     }

@@ -24,6 +24,11 @@ public class OnlinePropertyActivity extends BaseActivity<ActivityOnlinePropertyB
     }
 
     @Override
+    protected boolean isShowTime() {
+        return true;
+    }
+
+    @Override
     protected void initView() {
         viewBinding.tvCallProperty.setOnClickListener(v -> {
             startActivity(CallPropertyActivity.class);

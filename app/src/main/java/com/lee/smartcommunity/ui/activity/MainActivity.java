@@ -5,6 +5,8 @@ import com.lee.smartcommunity.app.AppManager;
 import com.lee.smartcommunity.databinding.ActivityMainBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.viewmodel.AppViewModel;
+import com.lee.utils.ThreadUtils;
+import com.lee.utils.ToastUtils;
 
 /**
  * 首页
@@ -20,6 +22,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, AppViewModel
 
     @Override
     protected boolean isShowAddress() {
+        return true;
+    }
+
+    @Override
+    protected boolean isShowTime() {
         return true;
     }
 
@@ -53,9 +60,18 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, AppViewModel
         });
     }
 
+    private boolean backToQuit;
+
     @Override
     public void onBackPressed() {
-        AppManager.getAppManager().appExit();
-        super.onBackPressed();
+        if (backToQuit) {
+            backToQuit = false;
+            AppManager.getAppManager().appExit();
+            super.onBackPressed();
+        } else {
+            backToQuit = true;
+            ToastUtils.showShort(R.string.app_quit);
+            ThreadUtils.runOnUiThreadDelayed(() -> backToQuit = false, 1000);
+        }
     }
 }

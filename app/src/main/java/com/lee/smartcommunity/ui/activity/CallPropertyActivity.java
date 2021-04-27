@@ -23,6 +23,11 @@ public class CallPropertyActivity extends BaseActivity<ActivityCallPropertyBindi
     }
 
     @Override
+    protected boolean isShowTime() {
+        return true;
+    }
+
+    @Override
     protected void initView() {
 
     }
