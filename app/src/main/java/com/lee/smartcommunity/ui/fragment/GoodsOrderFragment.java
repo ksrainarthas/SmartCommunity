@@ -10,9 +10,7 @@ import com.lee.smartcommunity.databinding.FragmentGoodsOrderBinding;
 import com.lee.smartcommunity.model.GetShopGoodsResult;
 import com.lee.smartcommunity.mvvm.BaseLazyFragment;
 import com.lee.smartcommunity.ui.adapter.GoodsOrderAdapter;
-import com.lee.smartcommunity.ui.decoration.HorizontalDividerItemItemDecoration;
 import com.lee.smartcommunity.ui.decoration.SpaceItemDecoration;
-import com.lee.smartcommunity.ui.decoration.VerticalDividerItemItemDecoration;
 import com.lee.smartcommunity.viewmodel.AppViewModel;
 import com.lee.utils.ToastUtils;
 
@@ -46,8 +44,6 @@ public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBindi
                     resultData = goodsResult.getData();
                     GridLayoutManager glm = new GridLayoutManager(getActivity(), column);
                     viewBinding.rvGoods.setLayoutManager(glm);
-                    viewBinding.rvGoods.addItemDecoration(new HorizontalDividerItemItemDecoration.Builder(getActivity()).drawable(android.R.color.transparent).size(15).build());
-                    viewBinding.rvGoods.addItemDecoration(new VerticalDividerItemItemDecoration.Builder(getActivity()).drawable(android.R.color.transparent).size(30).build());
                     viewBinding.rvGoods.addItemDecoration(new SpaceItemDecoration(column));
                     viewBinding.rvGoods.setAdapter(new GoodsOrderAdapter(getActivity(), R.layout.item_goods_order, resultData));
                 }

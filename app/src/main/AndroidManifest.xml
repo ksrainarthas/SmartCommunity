@@ -81,6 +81,9 @@
             android:name=".ui.activity.GoodsDetailActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
             android:screenOrientation="sensorLandscape" />
+        <activity android:name=".ui.activity.ConfirmOrderActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="sensorLandscape" />
     </application>
 
 </manifest>

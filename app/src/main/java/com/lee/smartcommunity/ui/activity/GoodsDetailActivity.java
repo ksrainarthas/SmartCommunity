@@ -47,6 +47,8 @@ public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding
                 viewBinding.tvName.setText(dataBean.getName());
                 viewBinding.confirmPurchase.setOnClickListener(v -> {
                     ToastUtils.showShort("确认购买");
+                    Intent extra = new Intent(this, ConfirmOrderActivity.class);
+                    startActivity(extra);
                 });
                 TextViewUtils.setSpannable(this, viewBinding.tvSellingPrice, this.getString(R.string.selling_price_value, dataBean.getPrice()), 4, false);
                 TextViewUtils.setSpannable(this, viewBinding.tvMemberPrice, this.getString(R.string.member_price_value, dataBean.getNb_price()), 4, false);
