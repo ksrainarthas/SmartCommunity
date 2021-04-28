@@ -11,7 +11,7 @@ import com.lee.smartcommunity.model.CalcPrice;
 import com.lee.smartcommunity.model.GetShopGoodsResult;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.ui.adapter.CalcPriceAdapter;
-import com.lee.smartcommunity.ui.decoration.VerticalDividerItemItemDecoration;
+import com.lee.smartcommunity.ui.decoration.HorizontalDividerItemItemDecoration;
 import com.lee.smartcommunity.viewmodel.AppViewModel;
 
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class ConfirmOrderActivity extends BaseActivity<ActivityConfirmOrderBindi
                 viewBinding.tvPayAmount.setText(getString(R.string.price_value, "12.99"));
                 LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
                 viewBinding.rvCalcPrice.setLayoutManager(llm);
-                viewBinding.rvCalcPrice.addItemDecoration(new VerticalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(20).build());
+                viewBinding.rvCalcPrice.addItemDecoration(new HorizontalDividerItemItemDecoration.Builder(this).drawable(android.R.color.transparent).size(20).build());
                 String[] stringArray = this.getResources().getStringArray(R.array.calc_price_array);
                 List<String> contents = new ArrayList<>();
                 contents.add("自提点自提");
