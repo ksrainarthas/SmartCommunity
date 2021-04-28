@@ -1,6 +1,7 @@
 package com.lee.smartcommunity.ui.fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -57,11 +58,15 @@ public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBindi
 
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                if (!isShowData) {
+                    refreshBinding.lottieLoading.setVisibility(View.VISIBLE);
+                }
                 viewModel.getShopGoodsListById(36);
             }
         });
         viewModel.getShopGoodsListByIdResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {
+                refreshBinding.lottieLoading.setVisibility(View.GONE);
                 refreshBinding.refreshLayout.finishRefresh();
                 refreshBinding.refreshLayout.finishLoadMore();
                 GetShopGoodsResult goodsResult = resource.data;
@@ -69,9 +74,9 @@ public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBindi
                     resultData = goodsResult.getData();
                     if (!isShowData) {
                         goodsOrderAdapter = new GoodsOrderAdapter(getActivity(), R.layout.item_goods_order, resultData);
-                        refreshBinding.rvGoods.setLayoutManager(new GridLayoutManager(getActivity(), column));
-                        refreshBinding.rvGoods.addItemDecoration(new SpaceItemDecoration(column));
-                        refreshBinding.rvGoods.setAdapter(goodsOrderAdapter);
+                        refreshBinding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), column));
+                        refreshBinding.recyclerView.addItemDecoration(new SpaceItemDecoration(column));
+                        refreshBinding.recyclerView.setAdapter(goodsOrderAdapter);
                         isShowData = true;
                     } else {
                         goodsOrderAdapter.setData(resultData);
@@ -79,11 +84,13 @@ public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBindi
                     }
                 }
             } else if (resource.status == Status.ERROR) {
+                refreshBinding.lottieLoading.setVisibility(View.GONE);
                 refreshBinding.refreshLayout.finishRefresh();
                 refreshBinding.refreshLayout.finishLoadMore();
                 ToastUtils.showShort("获取商品列表失败");
             }
         });
+        refreshBinding.lottieLoading.setVisibility(View.VISIBLE);
         //viewModel.getShopGoodsListById(Integer.parseInt(storeId));
         viewModel.getShopGoodsListById(36);// 测试数据
     }

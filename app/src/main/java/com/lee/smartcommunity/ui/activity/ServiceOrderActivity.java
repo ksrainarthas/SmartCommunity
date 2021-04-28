@@ -26,5 +26,6 @@ public class ServiceOrderActivity extends BaseActivity<ActivityServiceOrderBindi
     @Override
     protected void initView() {
         viewBinding.tvBack.setOnClickListener(v -> finish());
+        viewBinding.tvShoppingCart.setOnClickListener(v -> startActivity(ConfirmOrderActivity.class));
     }
 }

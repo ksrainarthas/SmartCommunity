@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.lee.retrofit.model.Status;
 import com.lee.smartcommunity.R;
@@ -43,6 +43,7 @@ public class GoodsOrderActivity extends BaseActivity<ActivityGoodsOrderBinding, 
     @Override
     protected void initView() {
         viewBinding.tvBack.setOnClickListener(v -> finish());
+        viewBinding.tvHead.setOnClickListener(v -> startActivity(PersonalCenterActivity.class));
         viewModel.getShopGoodsCategoryResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {
                 GetShopGoodsCategoryResult result = resource.data;
@@ -54,8 +55,11 @@ public class GoodsOrderActivity extends BaseActivity<ActivityGoodsOrderBinding, 
                             sortNameList.add(dataBean.getSort_name());
                         }
                         titles = sortNameList.toArray(new String[0]);
-                        viewBinding.viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-                        viewBinding.tabLayout.setViewPager(viewBinding.viewPager);
+                        viewBinding.viewPager.setAdapter(new MyPagerAdapter((FragmentActivity) mActivity));
+                        viewBinding.viewPager.setOffscreenPageLimit(titles.length);
+                        viewBinding.tabLayout.setSnapOnTabClick(true);
+                        viewBinding.tabLayout.setTitles(titles);
+                        viewBinding.tabLayout.setViewPager2(viewBinding.viewPager);
                     }
                 }
             } else if (resource.status == Status.ERROR) {
@@ -65,35 +69,24 @@ public class GoodsOrderActivity extends BaseActivity<ActivityGoodsOrderBinding, 
         viewModel.getShopGoodsCategory(11);
     }
 
-    public class MyPagerAdapter extends FragmentPagerAdapter {
-
-        // 新版懒加载
-        public MyPagerAdapter(@NonNull FragmentManager fm) {
-            super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        }
-
-        public MyPagerAdapter(@NonNull FragmentManager fm, int behavior) {
-            super(fm, behavior);
-        }
-
-        @Override
-        public int getCount() {
-            return titles.length;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
+    public class MyPagerAdapter extends FragmentStateAdapter {
+        public MyPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+            super(fragmentActivity);
         }
 
         @NonNull
         @Override
-        public Fragment getItem(int position) {
+        public Fragment createFragment(int position) {
             GoodsOrderFragment goodsOrderFragment = new GoodsOrderFragment();
             Bundle bundle = new Bundle();
             bundle.putString("storeId", resultData.get(position).getSort_id());
             goodsOrderFragment.setArguments(bundle);
             return goodsOrderFragment;
+        }
+
+        @Override
+        public int getItemCount() {
+            return titles.length;
         }
     }
 }

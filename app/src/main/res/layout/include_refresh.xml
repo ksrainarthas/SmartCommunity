@@ -11,12 +11,27 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_height" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_goods"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:overScrollMode="never" />
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_loading"
+            android:layout_width="@dimen/welcome_size"
+            android:layout_height="@dimen/welcome_size"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lottie/lottie_loading.json"
+            app:lottie_loop="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:overScrollMode="never" />
+    </RelativeLayout>
 
     <com.scwang.smart.refresh.footer.BallPulseFooter
         android:layout_width="match_parent"
