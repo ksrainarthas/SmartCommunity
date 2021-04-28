@@ -34,6 +34,8 @@ public abstract class BaseFragment<VB extends ViewBinding, VM extends BaseViewMo
 
     protected VM viewModel;
 
+    private View view;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -44,18 +46,21 @@ public abstract class BaseFragment<VB extends ViewBinding, VM extends BaseViewMo
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        initViewBinding(container);
-        initViewModel();
-        if (viewBinding != null) {
-            return viewBinding.getRoot();
-        } else {
+        if (view == null) {
             initViewBinding(container);
+            initViewModel();
             if (viewBinding != null) {
-                return viewBinding.getRoot();
+                view = viewBinding.getRoot();
             } else {
-                return super.onCreateView(inflater, container, savedInstanceState);
+                initViewBinding(container);
+                if (viewBinding != null) {
+                    view = viewBinding.getRoot();
+                } else {
+                    return super.onCreateView(inflater, container, savedInstanceState);
+                }
             }
         }
+        return view;
     }
 
     @Override

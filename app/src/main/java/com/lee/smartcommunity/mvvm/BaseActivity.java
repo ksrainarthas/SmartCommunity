@@ -15,6 +15,9 @@ import androidx.viewbinding.ViewBinding;
 import com.gyf.immersionbar.ImmersionBar;
 import com.lee.smartcommunity.databinding.ActivityBaseBinding;
 import com.lee.smartcommunity.ui.activity.MainActivity;
+import com.lee.smartcommunity.ui.activity.PersonalCenterActivity;
+import com.lee.swipeback.ParallaxBack;
+import com.lee.swipeback.ParallaxHelper;
 import com.lee.utils.ThreadUtils;
 
 import java.lang.reflect.Method;
@@ -31,6 +34,7 @@ import java.util.TimerTask;
  *
  * @author Lee
  */
+@ParallaxBack(edge = ParallaxBack.Edge.LEFT, layout = ParallaxBack.Layout.PARALLAX, edgeMode = ParallaxBack.EdgeMode.FULLSCREEN)
 public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewModel> extends AppCompatActivity {
 
     protected ActivityBaseBinding baseBinding;
@@ -81,6 +85,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
             initViewBinding("bind", View.class, view);
             initBarView(baseBinding);
         } else {
+            ParallaxHelper.disableParallaxBack(this);
             initViewBinding("inflate", LayoutInflater.class, getLayoutInflater());
             if (viewBinding != null) {
                 setContentView(viewBinding.getRoot());
@@ -186,7 +191,8 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
             baseBinding.tvHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivityFinish(MainActivity.class);
+                    AppManager.getAppManager().finishAllActivity();
+                    startActivity(MainActivity.class);
                 }
             });
         } else {
@@ -198,6 +204,7 @@ public abstract class BaseActivity<VB extends ViewBinding, VM extends BaseViewMo
         if (isShowHead()) {
             baseBinding.tvHead.setVisibility(View.VISIBLE);
             baseBinding.tvTime.setVisibility(View.GONE);
+            baseBinding.tvHead.setOnClickListener(v -> startActivity(PersonalCenterActivity.class));
         } else {
             baseBinding.tvHead.setVisibility(View.GONE);
         }

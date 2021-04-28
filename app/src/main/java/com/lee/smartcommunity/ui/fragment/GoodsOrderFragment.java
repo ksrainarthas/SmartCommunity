@@ -39,13 +39,15 @@ public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBindi
 
     @Override
     protected void initView() {
-
-        refreshBinding = IncludeRefreshBinding.inflate(getLayoutInflater(), viewBinding.getRoot(), true);
-
         Bundle arguments = getArguments();
         if (arguments != null) {
             storeId = arguments.getString("storeId");
         }
+    }
+
+    @Override
+    public void onLazyLoad() {
+        refreshBinding = IncludeRefreshBinding.inflate(getLayoutInflater(), viewBinding.getRoot(), true);
 
         refreshBinding.refreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
@@ -58,10 +60,6 @@ public class GoodsOrderFragment extends BaseLazyFragment<FragmentGoodsOrderBindi
                 viewModel.getShopGoodsListById(36);
             }
         });
-    }
-
-    @Override
-    public void onLazyLoad() {
         viewModel.getShopGoodsListByIdResult().observe(this, resource -> {
             if (resource.status == Status.SUCCESS) {
                 refreshBinding.refreshLayout.finishRefresh();

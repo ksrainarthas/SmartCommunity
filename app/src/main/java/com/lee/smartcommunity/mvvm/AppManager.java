@@ -1,4 +1,4 @@
-package com.lee.smartcommunity.app;
+package com.lee.smartcommunity.mvvm;
 
 import android.app.Activity;
 
@@ -112,6 +112,21 @@ public class AppManager {
             if (null != activityStack.get(i)) {
                 finishActivity(activityStack.get(i));
                 LogUtils.d(activityStack.get(i));
+            }
+        }
+        activityStack.clear();
+    }
+
+    /**
+     * 结束所有Activity, 除了指定的activity不移除
+     */
+    public void finishAllExcludeActivity(Class<?> cls) {
+        for (int i = 0; i < activityStack.size(); i++) {
+            if (null != activityStack.get(i)) {
+                if (!activityStack.get(i).getClass().equals(cls)) {
+                    finishActivity(activityStack.get(i));
+                    LogUtils.d(activityStack.get(i));
+                }
             }
         }
         activityStack.clear();

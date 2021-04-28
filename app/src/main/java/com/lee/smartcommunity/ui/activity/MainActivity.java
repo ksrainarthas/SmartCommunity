@@ -1,7 +1,7 @@
 package com.lee.smartcommunity.ui.activity;
 
 import com.lee.smartcommunity.R;
-import com.lee.smartcommunity.app.AppManager;
+import com.lee.smartcommunity.mvvm.AppManager;
 import com.lee.smartcommunity.databinding.ActivityMainBinding;
 import com.lee.smartcommunity.mvvm.BaseActivity;
 import com.lee.smartcommunity.viewmodel.AppViewModel;

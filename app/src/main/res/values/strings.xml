@@ -11,6 +11,7 @@
     <string name="confirm_order">确认订单</string>
     <string name="online_repair">在线报修</string>
     <string name="goods_detail">商品详情</string>
+    <string name="personal_center">个人中心</string>
     <string name="property_payment">物业缴费</string>
     <string name="guest_invitation">访客邀请</string>
     <string name="litdu_call_property">小度小度，呼叫物业</string>
@@ -33,7 +34,7 @@
     <string name="price_value">￥%1$s</string>
     <string name="property_payment_time">2021年上半年物业缴费</string>
     <string name="property_payment_wechat_pay">微信扫一扫手机缴费</string>
-    <string name="status_unpay">未交费</string>
+    <string name="status_un_pay">未交费</string>
     <string name="status_pay">已交费</string>
     <string name="comments_value">%1$s评价</string>
     <string name="favorable_rate">%1$s好评率</string>

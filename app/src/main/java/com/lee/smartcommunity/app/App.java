@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.lee.smartcommunity.mvvm.AppManager;
+import com.lee.swipeback.ParallaxHelper;
 import com.lee.utils.LogUtils;
 import com.lee.utils.Utils;
 
@@ -22,6 +24,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         application = this;
+        registerActivityLifecycleCallbacks(ParallaxHelper.getInstance());
         Utils.init(this);
         setApplication(this);
         initLogUtils();

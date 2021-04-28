@@ -31,7 +31,7 @@ public class GetPropertyPayAdapter extends CommonAdapter<GetPropertyResult.DataB
         holder.setText(R.id.tv_time, dataBean.getProperty_year_name()+"/"+dataBean.getProperty_month_num());
         String status = String.valueOf(dataBean.getProperty_price());
         if (status == null || status.equals("0")) {
-            holder.setText(R.id.tv_status, context.getResources().getString(R.string.status_unpay));
+            holder.setText(R.id.tv_status, context.getResources().getString(R.string.status_un_pay));
             holder.setBackgroundColor(R.id.tv_status, context.getResources().getColor(R.color.repair_status_undone));
         } else {
             holder.setText(R.id.tv_status, context.getResources().getString(R.string.status_pay));
