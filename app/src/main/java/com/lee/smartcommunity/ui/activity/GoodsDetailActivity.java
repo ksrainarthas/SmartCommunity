@@ -13,7 +13,6 @@ import com.lee.smartcommunity.ui.adapter.GoodsDetailLabelsAdapter;
 import com.lee.smartcommunity.ui.decoration.VerticalDividerItemItemDecoration;
 import com.lee.smartcommunity.utils.TextViewUtils;
 import com.lee.smartcommunity.viewmodel.AppViewModel;
-import com.lee.utils.ToastUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,8 +50,8 @@ public class GoodsDetailActivity extends BaseActivity<ActivityGoodsDetailBinding
                         .into(viewBinding.ivImage);
                 viewBinding.tvName.setText(dataBean.getName());
                 viewBinding.confirmPurchase.setOnClickListener(v -> {
-                    ToastUtils.showShort("确认购买");
                     Intent extra = new Intent(this, ConfirmOrderActivity.class);
+                    extra.putExtra("confirm_detail", dataBean);
                     startActivity(extra);
                 });
                 TextViewUtils.setSpannable(this, viewBinding.tvSellingPrice, this.getString(R.string.selling_price_value, dataBean.getPrice()), 4, false);

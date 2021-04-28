@@ -42,4 +42,9 @@
     <string name="member_price_value">会员价：￥%1$s</string>
     <string name="confirm_purchase">确认购买</string>
     <string name="app_quit">再按一次退出</string>
+    <string name="submit_order">提交订单</string>
+    <string name="delivery">配送</string>
+    <string name="goods_price">商品金额</string>
+    <string name="coin_discount">邻里币折扣</string>
+    <string name="coupon">优惠券</string>
 </resources>

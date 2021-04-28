@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="calc_price_array">
+        <item>@string/delivery</item>
+        <item>@string/goods_price</item>
+        <item>@string/coin_discount</item>
+        <item>@string/coupon</item>
+    </string-array>
+</resources>
