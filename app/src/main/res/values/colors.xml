@@ -9,4 +9,8 @@
     <color name="repair_status_done">#3fff01</color>
     <color name="repair_status_undone">#ff0101</color>
     <color name="goods_price">#f40000</color>
+
+    <!-- Chat Activity -->
+    <color name="localBackground">#827b92</color>
+    <color name="remoteBackground">#484258</color>
 </resources>
