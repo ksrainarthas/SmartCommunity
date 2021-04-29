@@ -57,6 +57,12 @@ public class ConfirmOrderActivity extends BaseActivity<ActivityConfirmOrderBindi
                 viewBinding.tvBuyNum.setText(String.valueOf(mBuyNum));
                 viewBinding.ivAdd.setOnClickListener(v -> addBuyNum());
                 viewBinding.ivMinus.setOnClickListener(v -> minusBuyNum());
+                viewBinding.btnSubmit.setOnClickListener(v -> {
+                    // 假数据&假跳转
+                    Intent extra = new Intent(ConfirmOrderActivity.this, PayInfoActivity.class);
+                    extra.putExtra("pay_info", "9.9");
+                    startActivity(extra);
+                });
                 //假数据
                 viewBinding.tvUserName.setText("张恩");
                 viewBinding.tvUserTel.setText("13812345678");

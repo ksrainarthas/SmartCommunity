@@ -97,5 +97,9 @@
             android:name=".ui.activity.VideoChatActivity"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/FullScreenVideoTheme" />
+        <activity
+            android:name=".ui.activity.PayInfoActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:screenOrientation="sensorLandscape" />
     </application>
 </manifest>

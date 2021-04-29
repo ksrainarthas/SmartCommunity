@@ -47,4 +47,7 @@
     <string name="goods_price">商品金额</string>
     <string name="coin_discount">邻里币折扣</string>
     <string name="coupon">优惠券</string>
+    <string name="pay_info">支付信息</string>
+    <string name="pay_price">支付金额￥%1$s</string>
+    <string name="pay_tips">请打开微信扫一扫</string>
 </resources>

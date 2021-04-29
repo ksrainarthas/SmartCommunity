@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/comments_value"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_large"
             app:layout_constraintBottom_toTopOf="@+id/guideline11"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="@+id/guideline11" />
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:text="@string/favorable_rate"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_large"
             app:layout_constraintBottom_toTopOf="@+id/guideline11"
             app:layout_constraintStart_toEndOf="@+id/tv_comments_value"
             app:layout_constraintTop_toTopOf="@+id/guideline11" />
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/selling_price_value"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_large"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintTop_toTopOf="@+id/guideline13" />
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/member_price_value"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_large"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             app:layout_constraintStart_toEndOf="@+id/tv_selling_price"
             app:layout_constraintTop_toTopOf="@+id/guideline13" />
