@@ -12,7 +12,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.gyf.immersionbar.ImmersionBar;
+import com.lee.immersionbar.ImmersionBar;
 import com.lee.smartcommunity.databinding.ActivityBaseBinding;
 import com.lee.smartcommunity.ui.activity.MainActivity;
 import com.lee.smartcommunity.ui.activity.PersonalCenterActivity;

@@ -57,7 +57,6 @@ public class GoodsOrderActivity extends BaseActivity<ActivityGoodsOrderBinding, 
                         titles = sortNameList.toArray(new String[0]);
                         viewBinding.viewPager.setAdapter(new MyPagerAdapter((FragmentActivity) mActivity));
                         viewBinding.viewPager.setOffscreenPageLimit(titles.length);
-                        viewBinding.tabLayout.setSnapOnTabClick(true);
                         viewBinding.tabLayout.setTitles(titles);
                         viewBinding.tabLayout.setViewPager2(viewBinding.viewPager);
                     }

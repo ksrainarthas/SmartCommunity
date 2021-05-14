@@ -161,7 +161,7 @@ public class VideoChatActivity extends BaseActivity<ActivityVideoChatBinding, Ba
     }
 
     String appId = "0a57ca8e2a644a8bb51a6b24d63f368a";
-    String accessToken = "0060a57ca8e2a644a8bb51a6b24d63f368aIADa6TBmzYm3DO3SKnZY+jdng3/TzCZe1psUn4Tq35uS3gmoacQAAAAAIgAzIJFyebWLYAQAAQAJcopgAgAJcopgAwAJcopgBAAJcopg";
+    String accessToken = "0060a57ca8e2a644a8bb51a6b24d63f368aIABmTzKeqwuqf1ON3x83x+iHhKMKsfcICrgzXZ6VNQ2WQAmoacQAAAAAEAB33sfLRIifYAEAAQBDiJ9g";
 
     private void initializeEngine() {
         try {
